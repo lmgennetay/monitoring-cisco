@@ -1,19 +1,26 @@
-<!DOCTYPE html>
+<?php
 
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Monitoring CISCO">
-        <meta name="keywords" content="HTML, CSS, PHP">
-        <meta name="author" content="Julien DROUART, Louis-Marie GENNETAY, Louis MAUGER">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Monitoring CISCO</title>
-        <link rel="stylesheet" href="Assets/Css/style.css">
-        <link rel="icon" href="Assets/Images/favicon.png">
-    </head>
+include_once('Connection/connection.php');
 
-    <body>
-        <header><?php include_once('Views/menu.php') ?></header>
-        <footer><?php include_once('Views/footer.php') ?></footer>
-    </body>
-</html>
+
+if (!isset($_GET['section']) OR $_GET['section'] == 'index')
+{
+    include_once('controleur/accueil.php');
+}
+
+else
+{
+	if ($_GET['section'] == 'artistes')
+	{  
+			include_once('controleur/artistes.php');
+	}
+	if ($_GET['section'] == 'detailArtiste')
+	{  
+			include_once('controleur/detailArtiste.php');
+	}
+	if ($_GET['section'] == 'oeuvresArtiste')
+	{  
+			include_once('controleur/oeuvresArtiste.php');
+	}
+}
+?>
