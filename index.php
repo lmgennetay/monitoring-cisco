@@ -12,7 +12,7 @@ else
 {
 	switch ($_GET['section']) {
 		case 'newconfig':
-		include_once('Controllers/accueil.php');
+		include_once('Controllers/appareil.php');
 			die;
 			break;
 		case 1:

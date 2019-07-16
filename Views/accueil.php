@@ -16,7 +16,7 @@
     <body>
         <header class="menu"><?php include_once('Views/menu.php') ?></header>
         <div class="conteneur">
-            <a href="index.php?section=newconfig">+</a>
+            <a href="index.php?section=newconfig&function=formadd">+</a>
             <h1 class="text-center blue">Accueil</h1>
             <div class="separator"></div>
             <table class="text-center">
