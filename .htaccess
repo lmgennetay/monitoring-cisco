@@ -1,0 +1,21 @@
+# protection du fichier htaccess
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+# protection de la lecture des répertoires
+Options -Indexes
+
+DirectoryIndex index.php
+ErrorDocument 404 error404.php
+
+RewriteEngine On
+
+# protection contre le hotlinking
+RewriteCond %{HTTP_REFERER} !^http://localhost/monitoring-cisco/ [NC]
+RewriteRule \.(png|jpg|jpeg|bmp)$ - [NC,F]
+
+RewriteRule ^accueil index.php [NC,L]
+
+# RewriteRule ^data/(recherche)(/|) controleur/restcontroller.php?type=$1 [nc,qsa]
