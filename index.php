@@ -11,14 +11,15 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index')
 else
 {
 	switch ($_GET['section']) {
-		case 'test':
-			echo "test";
+		case 'newconfig':
+		include_once('Controllers/accueil.php');
+			die;
 			break;
 		case 1:
-			echo "i égal 1";
+			echo "test";
 			break;
 		case 2:
-			echo "i égal 2";
+			echo "test";
 			break;
 	}
 }

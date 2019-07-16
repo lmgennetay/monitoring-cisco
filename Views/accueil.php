@@ -16,6 +16,7 @@
         <header class="menu"><?php include_once('Views/menu.php') ?></header>
         <div class="conteneur">
             <h1 class="text-center">Accueil</h1>
+            <a href="index.php?section=newconfig">+</a>
             <table class="text-center">
                 <tbody>
                     <tr>
