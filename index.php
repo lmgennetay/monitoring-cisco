@@ -23,4 +23,3 @@ else
 			include_once('controleur/oeuvresArtiste.php');
 	}
 }
-?>
