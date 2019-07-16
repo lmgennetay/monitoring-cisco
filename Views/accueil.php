@@ -10,6 +10,7 @@
         <title>Monitoring CISCO</title>
         <link rel="stylesheet" href="Assets/Css/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <script type="text/javascript" src="Js/fonction.js"></script>
         <link rel="icon" href="Assets/Images/favicon.png">
     </head>
 
@@ -22,7 +23,7 @@
             <table class="text-center">
                 <tbody>
                     <tr>
-                        <th><input type="checkbox" name="selectionToutAppareil"></th>
+                        <th><input type="checkbox" name="selectionToutAppareil" onclick="selectAllApp(this)"></th>
                         <th></th>
                         <th class="col">Nom de l'appareil</th>
                         <th class="col">IP</th>
