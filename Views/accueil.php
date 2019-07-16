@@ -16,9 +16,9 @@
     <body>
         <header class="menu"><?php include_once('Views/menu.php') ?></header>
         <div class="conteneur">
-            <a href="index.php?section=newconfig">+</a>
             <h1 class="text-center blue">Accueil</h1>
             <div class="separator"></div>
+            <a href="index.php?section=newconfig&function=formadd" class="ajoutApp">+ Ajouter un appareil</a>
             <table class="text-center">
                 <tbody>
                     <tr>
