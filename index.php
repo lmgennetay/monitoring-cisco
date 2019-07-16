@@ -5,7 +5,7 @@ include_once('Connection/connection.php');
 
 if (!isset($_GET['section']) OR $_GET['section'] == 'index')
 {
-    include_once('controleur/accueil.php');
+    include_once('Controllers/accueil.php');
 }
 
 else
