@@ -13,6 +13,7 @@ body {
     padding: 0px;
     width: 100%;
     font-size: 1em;
+    background-color: #dddddd;
 }
 
 h1 {
@@ -32,6 +33,18 @@ li {
 div {
     margin: 0px;
     padding: 0px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 15px 0px;
 }
 
 .menu {
@@ -76,8 +89,51 @@ div {
 table {
     width: 70%;
     margin: 0 auto;
+    border-spacing: 0px;
+}
+
+tr {
+    height: 35px;
+}
+
+td {
+    border-top: 1px solid black;
 }
 
 .blue {
     color: #0077ff;
+}
+
+.separator {
+    width: 40%;
+    border-bottom: 2px solid #0077ff;
+    margin: 20px auto;
+}
+
+.buttonConn {
+    text-decoration: none;
+    color: black;
+    padding: 0.2vw;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.buttonConn:hover {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.pastille-green {
+    color: #00d600;
+}
+
+.pastille-red {
+    color: red;
+}
+
+.pastille-gray {
+    color: gray;
 }
