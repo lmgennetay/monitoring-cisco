@@ -14,7 +14,7 @@
 
     <body>
         <header class="menu"><?php include_once('Views/menu.php') ?></header>
-        <div>
+        <div class="conteneur">
             <h1 class="text-center">Accueil</h1>
             <table class="text-center">
                 <tbody>
