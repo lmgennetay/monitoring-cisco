@@ -9,13 +9,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Monitoring CISCO</title>
         <link rel="stylesheet" href="Assets/Css/style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="icon" href="Assets/Images/favicon.png">
     </head>
 
     <body>
         <header class="menu"><?php include_once('Views/menu.php') ?></header>
         <div class="conteneur">
-            <h1 class="text-center">Accueil</h1>
+            <h1 class="text-center blue">Accueil</h1>
+            <div class="separator"></div>
             <table class="text-center">
                 <tbody>
                     <tr>
@@ -28,7 +30,7 @@
                     </tr>
                     <tr class="appareil">
                         <td><input type="checkbox" name="selectionAppareil"></td>
-                        <td><span style="color: #00d000"><i class="fas fa-circle"></i></span></td>
+                        <td><span class="pastille-green"><i class="fas fa-circle"></i></span></td>
                         <td><label>Nom de l'appareil</label></td>
                         <td><label>IP</label></td>
                         <td><label>Connecté</label></td>
@@ -40,7 +42,7 @@
                     </tr>
                     <tr class="appareil">
                         <td><input type="checkbox" name="selectionAppareil"></td>
-                        <td><span style="color: red"><i class="fas fa-circle"></i></span></td>
+                        <td><span class="pastille-red"><i class="fas fa-circle"></i></span></td>
                         <td><label>Nom de l'appareil</label></td>
                         <td><label>IP</label></td>
                         <td><label>Déconnecté</label></td>
@@ -52,7 +54,7 @@
                     </tr>
                     <tr class="appareil">
                         <td><input type="checkbox" name="selectionAppareil"></td>
-                        <td><span style="color: orange"><i class="fas fa-circle"></i></span></td>
+                        <td><span class="pastille-gray"><i class="fas fa-circle"></i></span></td>
                         <td><label>Nom de l'appareil</label></td>
                         <td><label>IP</label></td>
                         <td><label>Désactivé</label></td>
