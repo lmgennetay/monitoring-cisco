@@ -1,14 +1,9 @@
-@font-face {
-    font-family: "HelveticaNeue";
-    src: url("/Assets/Font/HelveticaNeue-Black.woff") format("woff");
-}
-
 html {
     margin: 0px;
 }
 
 body {
-    font-family: "HelveticaNeue", sans-serif;
+    font-family: sans-serif;
     margin: 0px;
     padding: 0px;
     width: 100%;
@@ -136,4 +131,19 @@ td {
 
 .pastille-gray {
     color: gray;
+}
+
+.ajoutApp {
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+    background-color: #0077ff;
+    color: white;
+}
+
+.ajoutApp:hover {
+    background-color: #4099ff;
+    color: white;
 }

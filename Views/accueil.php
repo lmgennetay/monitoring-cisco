@@ -10,19 +10,20 @@
         <title>Monitoring CISCO</title>
         <link rel="stylesheet" href="Assets/Css/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <script type="text/javascript" src="Js/fonction.js"></script>
         <link rel="icon" href="Assets/Images/favicon.png">
     </head>
 
     <body>
         <header class="menu"><?php include_once('Views/menu.php') ?></header>
         <div class="conteneur">
-            <a href="index.php?section=newconfig&function=formadd">+</a>
             <h1 class="text-center blue">Accueil</h1>
             <div class="separator"></div>
+            <a href="index.php?section=newconfig&function=formadd" class="ajoutApp">+ Ajouter un appareil</a>
             <table class="text-center">
                 <tbody>
                     <tr>
-                        <th><input type="checkbox" name="selectionToutAppareil"></th>
+                        <th><input type="checkbox" name="selectionToutAppareil" onclick="selectAllApp(this)"></th>
                         <th></th>
                         <th class="col">Nom de l'appareil</th>
                         <th class="col">IP</th>
