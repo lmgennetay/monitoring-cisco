@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="Assets/Css/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <script type="text/javascript" src="Js/fonction.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <link rel="icon" href="Assets/Images/favicon.png">
     </head>
 
@@ -31,7 +32,7 @@
                         <th class="col">Action</th>
                     </tr>
                     <tr class="appareil">
-                        <td><input type="checkbox" name="selectionAppareil"></td>
+                        <td><input type="checkbox" class="selectionAppareil"></td>
                         <td><span class="pastille-green"><i class="fas fa-circle"></i></span></td>
                         <td><label>Nom de l'appareil</label></td>
                         <td><label>IP</label></td>
@@ -43,7 +44,7 @@
                         </td>
                     </tr>
                     <tr class="appareil">
-                        <td><input type="checkbox" name="selectionAppareil"></td>
+                        <td><input type="checkbox" class="selectionAppareil"></td>
                         <td><span class="pastille-red"><i class="fas fa-circle"></i></span></td>
                         <td><label>Nom de l'appareil</label></td>
                         <td><label>IP</label></td>
@@ -55,7 +56,7 @@
                         </td>
                     </tr>
                     <tr class="appareil">
-                        <td><input type="checkbox" name="selectionAppareil"></td>
+                        <td><input type="checkbox" class="selectionAppareil"></td>
                         <td><span class="pastille-gray"><i class="fas fa-circle"></i></span></td>
                         <td><label>Nom de l'appareil</label></td>
                         <td><label>IP</label></td>
