@@ -10,16 +10,15 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index')
 
 else
 {
-	if ($_GET['section'] == 'artistes')
-	{  
-			include_once('controleur/artistes.php');
-	}
-	if ($_GET['section'] == 'detailArtiste')
-	{  
-			include_once('controleur/detailArtiste.php');
-	}
-	if ($_GET['section'] == 'oeuvresArtiste')
-	{  
-			include_once('controleur/oeuvresArtiste.php');
+	switch ($_GET['section']) {
+		case 'test':
+			echo "test";
+			break;
+		case 1:
+			echo "i égal 1";
+			break;
+		case 2:
+			echo "i égal 2";
+			break;
 	}
 }
