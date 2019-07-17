@@ -24,9 +24,9 @@
                     <label for="id">Identifiant</label>
                     <input type="text" name="id" placeholder="Identifiant CISCO" class="inputConnApp">
                     <label for="id">Mot de passe</label>
-                    <input type="text" name="mdp" placeholder="Mot de passe CISCO" class="inputConnApp">
+                    <input type="password" name="mdp" placeholder="Mot de passe CISCO" class="inputConnApp">
                     <label for="id">Mot de passe n°2</label>
-                    <input type="text" name="mdp2" placeholder="Mot de passe CISCO n°2" class="inputConnApp">
+                    <input type="password" name="mdp2" placeholder="Mot de passe CISCO n°2" class="inputConnApp">
                     <input type="submit" name="submit" value="Se connecter" class="submitConnApp">
                 </form>
             </div>
