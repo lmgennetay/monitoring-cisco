@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 
 <html lang="fr">
-    <head>
+    <head>!
+        
         <meta charset="UTF-8">
         <meta name="description" content="Monitoring CISCO">
         <meta name="keywords" content="HTML, CSS, PHP">
@@ -31,42 +32,25 @@
                         <th class="col">État</th>
                         <th class="col">Action</th>
                     </tr>
-                    <tr class="appareil">
-                        <td><input type="checkbox" class="selectionAppareil"></td>
-                        <td><span class="pastille-green"><i class="fas fa-circle"></i></span></td>
-                        <td><label>Nom de l'appareil</label></td>
-                        <td><label>IP</label></td>
-                        <td><label>Connecté</label></td>
-                        <td>
-                            <a class="buttonConn" href="/ports">Consulter les ports</a>
-                            <a class="buttonConn" href="/ping"><i class="fas fa-chart-line"></i></a>
-                            <a class="buttonConn" href="/suppr_appareil"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    <tr class="appareil">
-                        <td><input type="checkbox" class="selectionAppareil"></td>
-                        <td><span class="pastille-red"><i class="fas fa-circle"></i></span></td>
-                        <td><label>Nom de l'appareil</label></td>
-                        <td><label>IP</label></td>
-                        <td><label>Déconnecté</label></td>
-                        <td>
-                            <a class="buttonConn" href="/ports">Consulter les ports</a>
-                            <a class="buttonConn" href="/ping"><i class="fas fa-chart-line"></i></a>
-                            <a class="buttonConn" href="/suppr_appareil"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    <tr class="appareil">
-                        <td><input type="checkbox" class="selectionAppareil"></td>
-                        <td><span class="pastille-gray"><i class="fas fa-circle"></i></span></td>
-                        <td><label>Nom de l'appareil</label></td>
-                        <td><label>IP</label></td>
-                        <td><label>Désactivé</label></td>
-                        <td>
-                            <a class="buttonConn" href="/ports">Consulter les ports</a>
-                            <a class="buttonConn" href="/ping"><i class="fas fa-chart-line"></i></a>
-                            <a class="buttonConn" href="/suppr_appareil"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
+                    <?php
+                    foreach($listeAppareils as $appareil)
+                    {
+                    ?>
+                        <tr class="appareil">
+                            <td><input type="checkbox" class="selectionAppareil"></td>
+                            <td><span class="pastille-green"><i class="fas fa-circle"></i></span></td>
+                            <td><label><?php echo $appareil['libelle']; ?></label></td>
+                            <td><label><?php echo $appareil['ip']; ?></label></td>
+                            <td><label><?php echo $appareil['pingStatus']; ?></label></td>
+                            <td>
+                                <a class="buttonConn" href="/ports">Consulter les ports</a>
+                                <a class="buttonConn" href="/ping"><i class="fas fa-chart-line"></i></a>
+                                <a class="buttonConn" href="/suppr_appareil"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>

@@ -1,5 +1,4 @@
 <?php 
-
 switch ($_GET['function']) {
         case 'formadd':
 		nouveauAppareil();
@@ -14,11 +13,13 @@ switch ($_GET['function']) {
     
     function nouveauAppareil()
     {
-        if(isset($_POST['appareil']))
+        if(isset($_POST['libelle']))
         {
+            set_appareil($_POST);
             include_once('Controllers/accueil.php');
         }else{
-            include_once('');
+            include_once('Views/Form/AddMateriel.html');
+            
         }
         
         
