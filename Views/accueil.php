@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="fr">
-    <head>!
-        
+    <head>
         <meta charset="UTF-8">
         <meta name="description" content="Monitoring CISCO">
         <meta name="keywords" content="HTML, CSS, PHP">
@@ -21,6 +20,12 @@
         <div class="conteneur">
             <h1 class="text-center blue">Accueil</h1>
             <div class="separator"></div>
+            <div class="search-container">
+                <form action="/action_page.php" class="rechercheForm">
+                    <input type="text" placeholder="Search.." name="search" class="rechercheBar">
+                    <button type="submit" class="submitRecherche"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
             <a href="index.php?section=newconfig&function=formadd" class="ajoutApp">+ Ajouter un appareil</a>
             <table class="text-center">
                 <tbody>
