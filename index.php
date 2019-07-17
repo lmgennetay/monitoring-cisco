@@ -27,8 +27,8 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 				include_once('Controllers/connection.php');
 				die;
 				break;
-			case 2:
-				echo "test";
+			case 'supprapp':
+			include_once('Controllers/appareil.php');
 				break;
 		}
 	}
