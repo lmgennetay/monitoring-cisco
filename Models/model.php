@@ -25,8 +25,8 @@ function set_appareil($request)
 
 function ping($ip)
 {
-	//exec("ping -n 1 ".$ip, $output, $status);
-	exec("ping -c 1 ".$ip, $output, $status);
+	exec("ping -n 1 ".$ip, $output, $status);
+	// exec("ping -c 1 ".$ip, $output, $status);
 	if($status == 0)
 	{
 		return "Up";
@@ -36,4 +36,21 @@ function ping($ip)
 	
 }
 
-?>
+function get_conn_user($request) {
+	global $bdd;
+	$resultat = "";
+	$id = $_POST["id"];
+	$mdp = $_POST["mdp"];
+	$req = $bdd->prepare("SELECT user, mdp from user WHERE user = '$id' AND mdp = sha1('$mdp')");
+    $req->execute();
+	$user = $req->fetchAll(PDO::FETCH_ASSOC);
+	if($user) {
+		$_SESSION['token'] = sha1($id) . sha1($mdp);
+		$_SESSION['id'] = sha1($id);
+		$_SESSION['mdp'] = sha1($mdp);
+		$resultat = "true";
+	} else {
+		$resultat = "false";
+	}
+    return $resultat;
+}

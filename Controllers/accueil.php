@@ -6,5 +6,4 @@ foreach($listeAppareils as $k=>$v)
 	$listeAppareils[$k]['pingStatus'] = ping($listeAppareils[$k]['ip']);
 }
 
-include_once('Views/connexion.php');
-
+include_once('Views/accueil.php');

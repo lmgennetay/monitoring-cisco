@@ -48,7 +48,7 @@
                             <td><label><?php echo $appareil['ip']; ?></label></td>
                             <td><label><?php echo $appareil['pingStatus']; ?></label></td>
                             <td>
-                                <a class="buttonConn" href="/ports">Consulter les ports</a>
+                                <a class="buttonConn" href="index.php?section=connection&function=formConn">Consulter les ports</a>
                                 <a class="buttonConn" href="/ping"><i class="fas fa-chart-line"></i></a>
                                 <a class="buttonConn" href="/suppr_appareil"><i class="fas fa-trash-alt"></i></a>
                             </td>
