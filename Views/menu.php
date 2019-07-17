@@ -8,3 +8,7 @@
         <li><a href="index.php?section=connection&function=deconn">Déconnexion</a></li>
     </ul>
 </nav>
+<div class="logoBottomMenu">
+    <label class="blue">Partenaire :</label>
+    <img src="Assets/Images/logo-CESI.png" alt="logo CESI" class="logo-CESI">
+</div>

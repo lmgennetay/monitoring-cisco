@@ -17,7 +17,7 @@ function nouveauAppareil() {
         set_appareil($_POST);
         include_once('Controllers/accueil.php');
     } else {
-        include_once('Views/Form/AddMateriel.html');
+        include_once('Views/AddMateriel.php');
         
     }
 }
