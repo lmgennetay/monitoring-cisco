@@ -7,3 +7,4 @@ foreach($listeAppareils as $k=>$v)
 }
 
 include_once('Views/accueil.php');
+
