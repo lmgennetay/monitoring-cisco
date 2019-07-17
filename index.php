@@ -15,7 +15,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 		}
 	}
 } else {
-	if (!isset($_SESSION['token']) && !isset($_SESSION['id']) . !isset($_SESSION['mdp'])) {
+	if (!isset($_SESSION['token']) && !isset($_SESSION['id']) && !isset($_SESSION['mdp'])) {
 		include_once('Controllers/connection.php');
 	} else {
 		switch ($_GET['section']) {
@@ -27,8 +27,8 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 				include_once('Controllers/connection.php');
 				die;
 				break;
-			case 2:
-				echo "test";
+			case 'supprapp':
+			include_once('Controllers/appareil.php');
 				break;
 		}
 	}
