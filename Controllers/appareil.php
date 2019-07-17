@@ -1,16 +1,16 @@
 <?php
 
 switch ($_GET['function']) {
-    case 'formadd':
-    nouveauAppareil();
-        break;
-    case 1:
-        echo "test";
-        break;
-    case 2:
-        echo "test";
-        break;
-}
+        case 'formadd':
+		    nouveauAppareil();
+			break;
+		case 'supprapp':
+            supprimerAppareil($_GET['id']);
+			break;
+		case 2:
+			echo "test";
+			break;
+    }
     
 function nouveauAppareil() {
     if(isset($_POST['libelle'])) {
@@ -20,4 +20,13 @@ function nouveauAppareil() {
         include_once('Views/AddMateriel.php');
         
     }
+}
+
+function supprimerAppareil($id)
+{
+
+        deleteAppareil($id);
+        include_once('Controllers/accueil.php');
+    
+    
 }
