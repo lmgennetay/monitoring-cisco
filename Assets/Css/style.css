@@ -9,6 +9,10 @@ body {
     width: 100%;
     font-size: 1em;
     background-color: #dddddd;
+    background-position: center;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
 }
 
 h1 {
@@ -146,4 +150,15 @@ td {
 .ajoutApp:hover {
     background-color: #4099ff;
     color: white;
+}
+
+.logo {
+    width: 75px;
+    margin: 10px auto;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
