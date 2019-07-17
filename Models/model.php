@@ -25,8 +25,8 @@ function set_appareil($request)
 
 function ping($ip)
 {
-	//exec("ping -n 1 ".$ip, $output, $status);
-	exec("ping -c 1 ".$ip, $output, $status);
+	exec("ping -n 1 ".$ip, $output, $status);
+	//exec("ping -c 1 ".$ip, $output, $status);
 	if($status == 0)
 	{
 		return "Up";
@@ -34,6 +34,14 @@ function ping($ip)
 		return "Down";
 	}
 	
+}
+
+function deleteAppareil($id)
+{
+    global $bdd;
+
+    $req = $bdd->prepare(" DELETE from appareils where id = '$id' ");
+	$req->execute();
 }
 
 ?>

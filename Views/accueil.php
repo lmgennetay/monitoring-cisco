@@ -30,7 +30,7 @@
             <table class="text-center">
                 <tbody>
                     <tr>
-                        <th><input type="checkbox" name="selectionToutAppareil" onclick="selectAllApp(this)"></th>
+                        <th><input type="checkbox" id="selectionToutAppareil" name="selectionToutAppareil" onclick="selectAllApp(this)"></th>
                         <th></th>
                         <th class="col">Nom de l'appareil</th>
                         <th class="col">IP</th>
@@ -43,14 +43,26 @@
                     ?>
                         <tr class="appareil">
                             <td><input type="checkbox" class="selectionAppareil"></td>
-                            <td><span class="pastille-green"><i class="fas fa-circle"></i></span></td>
+                            <?php
+                                if($appareil['pingStatus'] == "Up"){
+                                    ?>
+                                    <td><span class="pastille-green"><i class="fas fa-circle"></i></span></td>
+                                    <?php
+                                }elseif($appareil['pingStatus'] == "Down"){
+                                    ?>
+                                    <td><span class="pastille-red"><i class="fas fa-circle"></i></span></td>
+                                    <?php
+                                }
+
+
+                            ?>
                             <td><label><?php echo $appareil['libelle']; ?></label></td>
                             <td><label><?php echo $appareil['ip']; ?></label></td>
                             <td><label><?php echo $appareil['pingStatus']; ?></label></td>
                             <td>
                                 <a class="buttonConn" href="/ports">Consulter les ports</a>
                                 <a class="buttonConn" href="/ping"><i class="fas fa-chart-line"></i></a>
-                                <a class="buttonConn" href="/suppr_appareil"><i class="fas fa-trash-alt"></i></a>
+                                <a class="buttonConn" href="index.php?section=supprapp&function=supprapp&id=<?= $appareil['id'] ?>"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                     <?php

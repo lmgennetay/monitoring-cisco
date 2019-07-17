@@ -13,11 +13,10 @@ else
 {
 	switch ($_GET['section']) {
 		case 'newconfig':
-		include_once('Controllers/appareil.php');
-			die;
+			include_once('Controllers/appareil.php');
 			break;
-		case 1:
-			echo "test";
+		case 'supprapp':
+			include_once('Controllers/appareil.php');
 			break;
 		case 2:
 			echo "test";

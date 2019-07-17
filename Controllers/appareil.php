@@ -1,10 +1,10 @@
 <?php 
 switch ($_GET['function']) {
         case 'formadd':
-		nouveauAppareil();
+		    nouveauAppareil();
 			break;
-		case 1:
-			echo "test";
+		case 'supprapp':
+            supprimerAppareil($_GET['id']);
 			break;
 		case 2:
 			echo "test";
@@ -22,5 +22,14 @@ switch ($_GET['function']) {
             
         }
         
+        
+    }
+
+    function supprimerAppareil($id)
+    {
+
+            deleteAppareil($id);
+            include_once('Controllers/accueil.php');
+       
         
     }
