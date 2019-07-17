@@ -1,0 +1,283 @@
+html {
+    margin: 0px;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-size: 1em;
+    background-color: #dddddd;
+    background-position: center;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+}
+
+h1 {
+    margin: 10px 0px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+li {
+    margin: 5px 0px;
+}
+
+div {
+    margin: 0px;
+    padding: 0px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 15px 0px;
+}
+
+.menu {
+    width: 12%;
+    padding: 5px;
+    background-color: #222222;
+    color: white;
+    bottom: 0px;
+    position: fixed;
+    min-height: 100%;
+}
+
+.menu nav {
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+    padding: 0px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #0077ff;
+    text-decoration: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.conteneur {
+    position: fixed;
+    right: 0px;
+    width: 87%;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100%;
+}
+
+.conteneur-conn {
+    position: fixed;
+    right: 0px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100%;
+}
+
+table {
+    width: 70%;
+    margin: 0 auto;
+    border-spacing: 0px;
+}
+
+tr {
+    height: 35px;
+}
+
+td {
+    border-top: 1px solid black;
+}
+
+.blue {
+    color: #0077ff;
+}
+
+.separator {
+    width: 40%;
+    border-bottom: 2px solid #0077ff;
+    margin: 20px auto;
+}
+
+.buttonConn {
+    text-decoration: none;
+    color: black;
+    padding: 0.2vw;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.buttonConn:hover {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.pastille-green {
+    color: #00d600;
+}
+
+.pastille-red {
+    color: red;
+}
+
+.pastille-gray {
+    color: gray;
+}
+
+.ajoutApp {
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+    background-color: #0077ff;
+    color: white;
+}
+
+.ajoutApp:hover {
+    background-color: #4099ff;
+    color: white;
+}
+
+.logo {
+    width: 75px;
+    margin: 10px auto;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rechercheForm {
+    width: 25%;
+}
+
+.rechercheBar {
+    width: 85%;
+    border: 1px solid #0077ff;
+    border-radius: 2px;
+    height: 25px;
+}
+
+.submitRecherche {
+    background-color: white;
+    color: black;
+    border: 1px solid #0077ff;
+    border-radius: 2px;
+    height: 30px;
+}
+
+.connexionDiv {
+    width: 30%;
+    height: 30%;
+    background-color: #cecece;
+    border: 2px solid #0077ff;
+    position: fixed;
+    left: 35%;
+    top: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formAppDiv {
+    width: 30%;
+    height: auto;
+    background-color: #cecece;
+    border: 2px solid #0077ff;
+    position: fixed;
+    left: 35%;
+    top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formConn {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.formApp {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.formApp li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputConnApp {
+    margin: 5px 0px;
+    border: 1px solid #0077ff;
+    border-radius: 2px;
+    height: 20px;
+}
+
+.submitConnApp {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px 0px;
+}
+
+.submitConnApp:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.logoBottomMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-CESI {
+    width: 200px;
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.element.text.medium {
+    width: 50%;
+}

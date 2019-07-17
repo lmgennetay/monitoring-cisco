@@ -1,25 +1,35 @@
 <?php
 
+session_start();
+include_once('Models/model.php');
 include_once('Connection/connection.php');
 
-
-if (!isset($_GET['section']) OR $_GET['section'] == 'index')
-{
-    include_once('controleur/accueil.php');
-}
-
-else
-{
-	if ($_GET['section'] == 'artistes')
-	{  
-			include_once('controleur/artistes.php');
+if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
+	if (!isset($_SESSION['token']) && !isset($_SESSION['id']) && !isset($_SESSION['mdp'])) {
+		include_once('Controllers/connection.php');
+	} else {
+		if ($_SESSION['token'] == $_SESSION['id'] . $_SESSION['mdp']) {
+			include_once('Controllers/accueil.php');
+		} else {
+			include_once('Controllers/connection.php');
+		}
 	}
-	if ($_GET['section'] == 'detailArtiste')
-	{  
-			include_once('controleur/detailArtiste.php');
-	}
-	if ($_GET['section'] == 'oeuvresArtiste')
-	{  
-			include_once('controleur/oeuvresArtiste.php');
+} else {
+	if (!isset($_SESSION['token']) && !isset($_SESSION['id']) . !isset($_SESSION['mdp'])) {
+		include_once('Controllers/connection.php');
+	} else {
+		switch ($_GET['section']) {
+			case 'newconfig':
+				include_once('Controllers/appareil.php');
+				die;
+				break;
+			case 'connection':
+				include_once('Controllers/connection.php');
+				die;
+				break;
+			case 2:
+				echo "test";
+				break;
+		}
 	}
 }
