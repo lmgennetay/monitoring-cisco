@@ -4,7 +4,7 @@
     </div>
     <h1 class="blue">Monitoring CISCO</h1>
     <ul>
-        <li><a href="/">Liste des appareils</a></li>
-        <li><a href="/logout">Déconnexion</a></li>
+        <li><a href="index.php">Liste des appareils</a></li>
+        <li><a href="index.php?section=connection&function=deconn">Déconnexion</a></li>
     </ul>
 </nav>

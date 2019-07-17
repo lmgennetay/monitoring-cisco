@@ -198,11 +198,43 @@ td {
 }
 
 .connexionDiv {
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 30%;
     background-color: #cecece;
     border: 2px solid #0077ff;
     position: fixed;
-    left: 25%;
-    top: 25%;
+    left: 35%;
+    top: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formConn {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.inputConnApp {
+    margin: 5px 0px;
+    border: 1px solid #0077ff;
+    border-radius: 2px;
+    height: 20px;
+}
+
+.submitConnApp {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px 0px;
+}
+
+.submitConnApp:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
 }
