@@ -23,11 +23,12 @@ function nouveauAppareil() {
 
 function supprimerAppareil($id)
 {
-        deleteAppareil($id);
-        include_once('Controllers/accueil.php');
+    deleteAppareil($id);
+    include_once('Controllers/accueil.php');
 }
 
 function ports($id)
 {
-        include_once('Controllers/accueil.php');
+    $commandesList = get_commands();
+    include_once('Views/ports.php');
 }

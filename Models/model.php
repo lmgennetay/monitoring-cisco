@@ -62,3 +62,14 @@ function get_conn_user($request) {
 	}
     return $resultat;
 }
+
+function get_commands()
+{
+    global $bdd;
+
+    $req = $bdd->prepare("SELECT * from commande order by label desc");
+	$req->execute();
+    $commandes = $req->fetchAll(PDO::FETCH_ASSOC);
+
+    return $commandes;
+}
