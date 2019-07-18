@@ -21,15 +21,12 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 		switch ($_GET['section']) {
 			case 'newconfig':
 				include_once('Controllers/appareil.php');
-				die;
 				break;
 			case 'connection':
-				include_once('Controllers/accueil.php');
-				die;
+				include_once('Controllers/connection.php');
 				break;
 			case 'detailAppareil':
 				include_once('Controllers/detailAppareil.php');
-				die;
 				break;
 			case 'supprapp':
 			include_once('Controllers/appareil.php');
