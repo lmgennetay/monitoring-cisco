@@ -61,8 +61,8 @@
                             <td><label><?php echo $appareil['ip']; ?></label></td>
                             <td><label><?php echo $appareil['pingStatus']; ?></label></td>
                             <td>
-                                <a class="buttonConn" href="index.php?section=connection&function=formConn&libelle=<?= $appareil['libelle'] ?>&id=<?= $appareil['id'] ?>">Consulter les ports</a>
-                                <a class="buttonConn" href="index.php?section=detailAppareil&choixId=<?php echo $wIdApp ?>"><i class="fas fa-edit"></i></a>
+                                <a class="buttonConn" href="index.php?section=newconfig&function=ports&id=<?php echo $appareil['id'] ?>">Consulter les ports</a>
+                                <a class="buttonConn" href="index.php?section=detailAppareil&choixId=<?php echo $wIdApp ?>"><i class="fas fa-cat"></i></a>
                                 <a class="buttonConn" href="/ping"><i class="fas fa-chart-line"></i></a>
                                 <a class="buttonConn" href="index.php?section=supprapp&function=supprapp&id=<?= $appareil['id'] ?>"><i class="fas fa-trash-alt"></i></a>
                             </td>
