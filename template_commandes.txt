@@ -1,7 +1,7 @@
-set username <username>
-set password <password>
-set enable_pwd <enable_password>
-set switch <ip>
+set username %username%
+set password %password%
+set enable_pwd %enable_password%
+set switch %ip%
 
 set timeout 60
  spawn ssh -oStrictHostKeyChecking=no $username@$switch
@@ -21,4 +21,5 @@ set timeout 60
 
 # La balise interact est obligatoire pour récupérer le résultat des commandes.
 # La ligne de commande "end" doit se trouver avec cette balise interact sinon le script se bloquera
- interact
+interact
+
