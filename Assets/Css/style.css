@@ -46,6 +46,26 @@ footer {
     padding: 15px 0px;
 }
 
+textarea.editTextarea {
+    resize: vertical;
+    min-height: 200px;
+    height: 200px;
+    width: 100%;
+}
+
+textarea.infoTextarea {
+    resize: none;
+    min-height: 150px;
+    height: 150px;
+    width: 100%;
+}
+
+textarea.infoTextarea:disabled {
+    background-color: white;
+    border: 1px solid #0077ff;
+    border-radius: 5px;
+}
+
 .menu {
     width: 12%;
     padding: 5px;
@@ -138,6 +158,24 @@ table tbody tr:nth-child(odd){
     background-color: black;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+.buttonSend {
+    text-decoration: none;
+    background-color: #0077ff;
+    color: white;
+    padding: 10px 5px;
+    border: 1px solid #0077ff;
+    border-radius: 10px;
+    width: auto;
+    margin: 5px 0px;
+    font-size: 1.2rem;
+}
+
+.buttonSend:hover {
+    cursor: pointer;
+    background-color: #4099ff;
+    border: 1px solid #4099ff;
 }
 
 .pastille-green {
@@ -314,4 +352,32 @@ table tbody tr:nth-child(odd){
     border-radius: 10px;
     background-color: #0077ff;
     color: white;
+}
+
+.rechercheCommande {
+    display: flex;
+    flex-direction: column;
+    height:700px;
+    width:25%;
+}
+
+.paramCommande {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:700px;
+    width:70%;
+}
+
+.portsCommandeFlex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.searchCommandList {
+    overflow:auto;
+    height:650px;
+    /* float:left; */
 }

@@ -21,11 +21,9 @@
         <div class="conteneur">
             <h1 class="text-center blue">Ports - commandes</h1>
             <div class="separator"></div>
-                <div>
-
-                </div>
-                <div>
-                    <select onchange="textArea()" name="selected" id="selectCommands" style="height:700px;overflow:auto;width:500px;float:left;" multiple>
+            <div class="portsCommandeFlex">
+                <div class="rechercheCommande">
+                    <select onchange="textArea()" class="searchCommandList" name="selected" id="selectCommands" multiple>
                         <?php
                             print_r($commandesList);
                             foreach($commandesList as $command)
@@ -36,31 +34,22 @@
                             } 
                         ?>
                     </select>
-                    <br>
-                    <input type="text" id="search" name="search" placeholder="Rechercher"  onkeyup="searchCommand(this.value)">
+                    <input type="text" id="search" name="search" placeholder="Rechercher une commande..."  onkeyup="searchCommand(this.value)">
                 </div>
-                <div style="float:right;">
-                    <label for="commandeLine">Commande à éxecuter</label>
-
-                    <textarea id="commandeLine" name="commandeLine"
-                              rows="5" cols="33">
-
-                    </textarea>
+                <div class="paramCommande">
+                    <label for="commandeLine">Commande à exécuter</label>
+                    <textarea id="commandeLine" name="commandeLine" rows="5" cols="33" class="editTextarea"></textarea>
+                    <button type="submit" name="modifier" value="2" class="buttonSend">Soumettre la commande</button>
                     <br>
                     <label for="commentaire">Commentaire</label>
-                    <textarea disabled id="commentaire" name="story"
-                              rows="5" cols="33">
-
-                    </textarea>
+                    <textarea disabled id="commentaire" name="story" rows="5" cols="33" class="infoTextarea"></textarea>
                     <br>
                     <label for="result">Resultat commande</label>
-                    <textarea disabled id="result" name="story"
-                              rows="5" cols="33">
-                            <?php if(isset($result)){ echo result;} ?>
+                    <textarea disabled id="result" name="story" rows="5" cols="33" class="infoTextarea"><?php if(isset($result)){ echo result;} ?>
                     </textarea>
                 </div>
-                <button type="submit" name="modifier" value="2">Soumettre</button>
             </div>
+        </div>
         <footer><?php include_once('Views/footer.php') ?></footer>
         </form>
     </body>
