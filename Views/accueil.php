@@ -10,8 +10,8 @@
         <title>Monitoring CISCO</title>
         <link rel="stylesheet" href="Assets/Css/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <script type="text/javascript" src="Js/fonction.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="Js/fonction.js"></script>
         <link rel="icon" href="Assets/Images/favicon.png">
     </head>
 
@@ -20,6 +20,7 @@
         <div class="conteneur">
             <h1 class="text-center blue">Accueil</h1>
             <div class="separator"></div>
+            <div class="conteneurReload"><a href="index.php"><span class="buttonReload"><i class="fas fa-sync-alt"></i></span> Recharger</a></div>
             <div class="search-container">
                 <form action="index.php?section=newconfig&function=recherche" method="post" class="rechercheForm">
                     <input type="text" placeholder="Rechercher un nom d'appareil ou un IP..." name="searchApp" class="rechercheBar">
@@ -62,7 +63,7 @@
                             <td><label><?php echo $appareil['pingStatus']; ?></label></td>
                             <td>
                                 <a class="buttonConn" href="index.php?section=newconfig&function=ports&id=<?php echo $appareil['id'] ?>">Consulter les ports</a>
-                                <a class="buttonConn" href="index.php?section=detailAppareil&choixId=<?php echo $wIdApp ?>"><i class="fas fa-edit"></i></a>
+                                <a class="buttonConn" href="index.php?section=modifAppareil&choixId=<?php echo $wIdApp ?>"><i class="fas fa-edit"></i></a>
                                 <a class="buttonConn" href="/ping"><i class="fas fa-chart-line"></i></a>
                                 <a class="buttonConn" href="index.php?section=supprapp&function=supprapp&id=<?= $appareil['id'] ?>"><i class="fas fa-trash-alt"></i></a>
                             </td>

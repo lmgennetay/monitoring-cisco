@@ -1,17 +1,14 @@
 <?php
 
-
-//récupération des infos pouvant être modifiées
-$nouveauLibelle=$_POST["TLibelle"];
-
-//récupération des mots de passes
-//$Mdp=$_POST["TMdp"];
-
-//Activation de la modification
+//récupération de l'identifiant appareil passé en paramètre
+	$idAppareilChoisi = $_GET["choixId"];
+	
+	
+//récupération des infos  correspondant à l'appareil  choisi auparavant
 	include_once('models/model.php');
-	set_modifAppareil($nouveauLibelle);
+	$appareilChoisi = get_detailAppareil($idAppareilChoisi);
+	
 
-//affichage de la vue associée
-	include_once('views/modifAppareil.php');
+// affichage de la vue associée
 
-	?>
+	include_once('Views/modifAppareil.php');

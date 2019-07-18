@@ -10,6 +10,9 @@ switch ($_GET['function']) {
         case 'recherche':
             recherche();
             break;
+		case 'formmodif':
+			modifierAppareil();
+			break;
         case 'ports':
             $_SESSION['appareil'] = get_detailAppareil($_GET['id']);
             ports($_SESSION["appareil"]['id']);
@@ -59,4 +62,16 @@ function ports($id)
         include_once('Views/ports.php');
     }
 }
+<<<<<<< HEAD
     
+=======
+
+function modifierAppareil() {
+    if(isset($_POST)) {
+        update_appareil($_POST);
+        include_once('Controllers/accueil.php');
+    } else {
+        include_once('Views/modifAppareil.php');
+    }
+}
+>>>>>>> d717cfa2d4009f5728429309149c35a2b6164c3d

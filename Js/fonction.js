@@ -16,3 +16,13 @@ function selectAllApp() {
 function searchCommand($text) {
     console.log("ici");
 }
+
+window.onbeforeunload = function (e) {
+    // $('.fa-sync-alt').addClass('fa-pulse');
+    $('.conteneurReload').html('<a href="index.php"><span class="buttonReload"><i class="fas fa-sync-alt fa-pulse"></i></span> Chargement en cours...</a>');
+}
+
+window.onload = function(e) {
+    // $('.fa-sync-alt').removeClass('fa-pulse');
+    $('.conteneurReload').html('<a href="index.php"><span class="buttonReload"><i class="fas fa-sync-alt"></i></span> Recharger</a>');
+}
