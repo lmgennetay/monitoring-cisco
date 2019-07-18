@@ -72,3 +72,31 @@ function searchApp($request) {
 
     return $appareils;
 }
+
+function get_commands()
+{
+    global $bdd;
+
+    $req = $bdd->prepare("SELECT * from commande order by label desc");
+	$req->execute();
+    $commandes = $req->fetchAll(PDO::FETCH_ASSOC);
+
+    return $commandes;
+}
+
+function get_detailAppareil($idApp)
+{
+    global $bdd;  
+    $req = $bdd->prepare("SELECT * FROM appareils WHERE id=$idApp");
+	$req->execute();
+    $appareils = $req->fetch();
+        
+    return $appareils;
+}
+
+function set_modifAppareil($wLibelleApp,$wIpApp,$wIdentifiantApp,$wMdpApp,$wMdp2App)
+{
+    global $bdd;
+    $req = $bdd->prepare("UPDATE appareils SET libelle ='$wLibelleApp', ip ='$wIpApp', identifiant ='$wIdentifiantApp', motdepasse ='$wMdpApp', motdepasse2 ='$wMdp2App' WHERE id=$idApp");
+	$req->execute();
+}

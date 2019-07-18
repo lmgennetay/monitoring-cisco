@@ -13,6 +13,9 @@ switch ($_GET['function']) {
 		case 2:
 			echo "test";
 			break;
+        case 'ports':
+            ports($_GET['id']);
+			break;
     }
     
 function nouveauAppareil() {
@@ -21,7 +24,6 @@ function nouveauAppareil() {
         include_once('Controllers/accueil.php');
     } else {
         include_once('Views/AddMateriel.php');
-        
     }
 }
 
@@ -41,4 +43,10 @@ function recherche() {
 
         include_once('Views/accueil.php');
     }
+}
+
+function ports($id)
+{
+    $commandesList = get_commands();
+    include_once('Views/ports.php');
 }

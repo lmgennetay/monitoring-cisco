@@ -12,3 +12,7 @@ function selectAllApp() {
         }
     });
 }
+
+function searchCommand($text) {
+    console.log("ici");
+}
