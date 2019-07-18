@@ -20,10 +20,8 @@
         <div class="conteneur">
             <h1 class="text-center blue">Ports - commandes</h1>
             <div class="separator"></div>
-                <div >
-                    <select multiple>
-                        
-                    </select>
+                <div>
+
                 </div>
                 <div>
                     <select onchange="textArea()" id="selectCommands" style="height:700px;overflow:auto;width:500px;float:left;" multiple>
