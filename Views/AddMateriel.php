@@ -25,7 +25,7 @@
                     <ul>
                         <li id="li_1" >
                             <label class="description" for="element_1">Libelle </label>
-                            <div>
+                            <div class="divInputAddMat">
                                 <input id="libelle" name="libelle" require class="element text medium inputConnApp" type="text" maxlength="255" value=""/> 
                             </div> 
                         </li>	
@@ -33,28 +33,28 @@
                         <li id="li_2" >
                             <label class="description" for="element_2">IP
                             </label>
-                            <div>
+                            <div class="divInputAddMat">
                                 <input id="ip" name="ip" require class="element text medium inputConnApp" type="text" maxlength="255" value=""/> 
                             </div> 
                         </li>
 
                         <li id="li_3" >
                             <label class="description" for="element_3">Identifiant </label>
-                            <div>
+                            <div class="divInputAddMat">
                                 <input id="identifiant" require name="identifiant" class="element text medium inputConnApp" type="text" maxlength="255" value=""/> 
                             </div> 
                         </li>
 
                         <li id="li_4" >
                             <label class="description" for="element_4">Mot de passe </label>
-                            <div>
+                            <div class="divInputAddMat">
                                 <input id="motdepasse" require name="motdepasse" class="element text medium inputConnApp" type="password" maxlength="255" value=""/> 
                             </div> 
                         </li>	
 
                         <li id="li_5" >
-                            <label class="description" for="element_5">Mot de passe 2 </label>
-                            <div>
+                            <label class="description" for="element_5">Mot de passe n°2 </label>
+                            <div class="divInputAddMat">
                                 <input id="motdepasse2" require name="motdepasse2" class="element text medium inputConnApp" type="password" maxlength="255" value=""/> 
                             </div> 
                         </li>
@@ -62,7 +62,7 @@
                         <li class="buttons">
                         <input type="hidden" name="form_id" value="73894" />
 
-                        <input id="saveForm" type="submit" value="Submit" class="submitConnApp" />
+                        <input id="saveForm" type="submit" value="Ajouter" class="submitConnApp" />
                         </li>
                     </ul>
                 </form>

@@ -215,12 +215,10 @@ td {
     height: auto;
     background-color: #cecece;
     border: 2px solid #0077ff;
-    position: fixed;
-    left: 35%;
-    top: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
 }
 
 .formConn {
@@ -279,5 +277,24 @@ td {
 }
 
 .element.text.medium {
-    width: 50%;
+    width: 100%;
+}
+
+.divInputAddMat {
+    width: 80%;
+}
+
+.rechercheEnCours {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    padding: 5px 5px 5px 7px;
+}
+
+.exitRecherche {
+    color: white;
+}
+
+.exitRecherche:hover {
+    color: gray;
 }

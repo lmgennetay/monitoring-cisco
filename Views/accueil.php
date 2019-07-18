@@ -21,10 +21,11 @@
             <h1 class="text-center blue">Accueil</h1>
             <div class="separator"></div>
             <div class="search-container">
-                <form action="/action_page.php" class="rechercheForm">
-                    <input type="text" placeholder="Search.." name="search" class="rechercheBar">
+                <form action="index.php?section=newconfig&function=recherche" method="post" class="rechercheForm">
+                    <input type="text" placeholder="Rechercher un nom d'appareil ou un IP..." name="searchApp" class="rechercheBar">
                     <button type="submit" class="submitRecherche"><i class="fa fa-search"></i></button>
                 </form>
+                <?php if(isset($rechercheEnCours) && $rechercheEnCours != "") { echo '<div class="rechercheEnCours">"' . $rechercheEnCours . '" <a href="index.php" onclick="exitSearch()" class="exitRecherche"><i class="fas fa-times-circle"></i></div>'; } ?>
             </div>
             <a href="index.php?section=newconfig&function=formadd" class="ajoutApp">+ Ajouter un appareil</a>
             <table class="text-center">

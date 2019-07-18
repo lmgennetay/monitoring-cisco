@@ -62,3 +62,13 @@ function get_conn_user($request) {
 	}
     return $resultat;
 }
+
+function searchApp($request) {
+	global $bdd;
+	$param = $_POST['searchApp'];
+    $req = $bdd->prepare("SELECT * from appareils WHERE libelle LIKE '%$param%' OR ip LIKE '%$param%' ORDER BY libelle ASC");
+	$req->execute();
+    $appareils = $req->fetchAll(PDO::FETCH_ASSOC);
+
+    return $appareils;
+}

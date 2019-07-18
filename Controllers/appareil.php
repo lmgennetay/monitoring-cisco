@@ -6,7 +6,10 @@ switch ($_GET['function']) {
 			break;
 		case 'supprapp':
             supprimerAppareil($_GET['id']);
-			break;
+            break;
+        case 'recherche':
+            recherche();
+            break;
 		case 2:
 			echo "test";
 			break;
@@ -22,11 +25,20 @@ function nouveauAppareil() {
     }
 }
 
-function supprimerAppareil($id)
-{
-
+function supprimerAppareil($id) {
         deleteAppareil($id);
         include_once('Controllers/accueil.php');
-    
-    
+}
+
+function recherche() {
+    if (isset($_POST['searchApp'])) {
+        $listeAppareils = searchApp($_POST);
+        foreach($listeAppareils as $k=>$v)
+        {
+            $listeAppareils[$k]['pingStatus'] = ping($listeAppareils[$k]['ip']);
+        }
+        $rechercheEnCours = $_POST['searchApp'];
+
+        include_once('Views/accueil.php');
+    }
 }
