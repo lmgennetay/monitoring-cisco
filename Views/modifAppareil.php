@@ -1,23 +1,83 @@
-<form action ="index.php?section=modifCompte" METHOD="POST">
-	
-	<?php
-//récupération des infos de l'appareil  
-		
-				$wIdApp=$appareilChoisi['id'];
-				?><INPUT NAME=TId value="<?php echo $wIdApp ?>" size=20 > <?php
-				$wLibelleApp=$appareilChoisi['libelle'];
-				?><INPUT NAME=TLibelle value="<?php echo $wLibelleApp ?>" size=20 > <?php
-				$wIpApp=$appareilChoisi['ip'];
-				?><INPUT NAME=TIp value="<?php echo $wIpApp ?>" size=20 > <?php
-				$wIdentifiantApp=$appareilChoisi['identifiant'];
-				?><INPUT NAME=TIdentification value="<?php echo $wIdentifiantApp ?>" size=20 > <?php
-				$wMdpApp=$appareilChoisi['motdepasse'];
-				?><INPUT NAME=TMdp value="<?php echo $wMdpApp ?>" size=20 > <?php
-				$wMdp2App=$appareilChoisi['motdepasse2'];
-				?><INPUT NAME=TMdp2 value="<?php echo $wMdp2App ?>" size=20 > <?php
-				
-				//affichage mode "bismillah"
-				//echo"<TR><TD colspan=2 ><H1> $wLibelleApp"."    "."$wIpApp"."    "."$wIdentifiantApp</H1></TD></TR>";				
-				
-			?>	
-</form>
+<?php
+	$wIdApp=$appareilChoisi['id'];
+	$wLibelleApp=$appareilChoisi['libelle'];
+	$wIpApp=$appareilChoisi['ip'];
+	$wIdentifiantApp=$appareilChoisi['identifiant'];
+	$wMdpApp=$appareilChoisi['motdepasse'];
+	$wMdp2App=$appareilChoisi['motdepasse2'];
+?>
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Monitoring CISCO">
+        <meta name="keywords" content="HTML, CSS, PHP">
+        <meta name="author" content="Julien DROUART, Louis-Marie GENNETAY, Louis MAUGER">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Monitoring CISCO</title>
+        <link rel="stylesheet" href="Assets/Css/style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <script type="text/javascript" src="Js/fonction.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <link rel="icon" href="Assets/Images/favicon.png">
+    </head>
+
+    <body>
+        <header class="menu"><?php include_once('Views/menu.php') ?></header>
+        <div class="conteneur">
+            <h1 class="text-center blue">Modification d'un appareil</h1>
+            <div class="separator"></div>
+            <div class="formAppDiv">
+                <form class="formApp"  method="post" action="index.php?section=newconfig&function=formmodif">              
+                    <ul>
+						<li>
+							<input id="id" name="id" require class="element text medium inputConnApp" type="hidden" maxlength="255" value="<?php echo $wIdApp ?>"/> 
+						</li>
+                        <li id="li_1" >
+                            <label class="description" for="element_1">Libelle </label>
+                            <div class="divInputAddMat">
+                                <input id="libelle" name="libelle" require class="element text medium inputConnApp" type="text" maxlength="255" value="<?php echo $wLibelleApp ?>"/> 
+                            </div> 
+                        </li>	
+
+                        <li id="li_2" >
+                            <label class="description" for="element_2">IP </label>
+                            <div class="divInputAddMat">
+                                <input id="ip" name="ip" require class="element text medium inputConnApp" type="text" maxlength="255" value="<?php echo $wIpApp ?>"/> 
+                            </div> 
+                        </li>
+
+                        <li id="li_3" >
+                            <label class="description" for="element_3">Identifiant </label>
+                            <div class="divInputAddMat">
+                                <input id="identifiant" require name="identifiant" class="element text medium inputConnApp" type="text" maxlength="255" value="<?php echo $wIdentifiantApp ?>"/> 
+                            </div> 
+                        </li>
+
+                        <li id="li_4" >
+                            <label class="description" for="element_4">Mot de passe </label>
+                            <div class="divInputAddMat">
+                                <input id="motdepasse" require name="motdepasse" class="element text medium inputConnApp" type="password" maxlength="255" value="<?php echo $wMdpApp ?>"/> 
+                            </div> 
+                        </li>	
+
+                        <li id="li_5" >
+                            <label class="description" for="element_5">Mot de passe n°2 </label>
+                            <div class="divInputAddMat">
+                                <input id="motdepasse2" require name="motdepasse2" class="element text medium inputConnApp" type="password" maxlength="255" value="<?php echo $wMdp2App ?>"/> 
+                            </div> 
+                        </li>
+
+                        <li class="buttons">
+                        <input type="hidden" name="form_id" value="73894" />
+
+                        <input id="saveForm" type="submit" value="Modifier" class="submitConnApp" />
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <footer><?php include_once('Views/footer.php') ?></footer>
+    </body>
+</html>

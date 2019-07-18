@@ -298,3 +298,17 @@ td {
 .exitRecherche:hover {
     color: gray;
 }
+
+.conteneurReload a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    width: 20px;
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+    background-color: #0077ff;
+    color: white;
+}
+
+.buttonReload {
+}

@@ -10,8 +10,8 @@ switch ($_GET['function']) {
         case 'recherche':
             recherche();
             break;
-		case 2:
-			echo "test";
+		case 'formmodif':
+			modifierAppareil();
 			break;
         case 'ports':
             ports($_GET['id']);
@@ -49,4 +49,13 @@ function ports($id)
 {
     $commandesList = get_commands();
     include_once('Views/ports.php');
+}
+
+function modifierAppareil() {
+    if(isset($_POST)) {
+        update_appareil($_POST);
+        include_once('Controllers/accueil.php');
+    } else {
+        include_once('Views/modifAppareil.php');
+    }
 }

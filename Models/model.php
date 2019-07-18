@@ -94,9 +94,15 @@ function get_detailAppareil($idApp)
     return $appareils;
 }
 
-function set_modifAppareil($wLibelleApp,$wIpApp,$wIdentifiantApp,$wMdpApp,$wMdp2App)
+function update_Appareil()
 {
-    global $bdd;
+	global $bdd;
+	$idApp = $_POST['id'];
+	$wLibelleApp = $_POST['libelle'];
+	$wIpApp = $_POST['ip'];
+	$wIdentifiantApp = $_POST['identifiant'];
+	$wMdpApp = $_POST['motdepasse'];
+	$wMdp2App = $_POST['motdepasse2'];
     $req = $bdd->prepare("UPDATE appareils SET libelle ='$wLibelleApp', ip ='$wIpApp', identifiant ='$wIdentifiantApp', motdepasse ='$wMdpApp', motdepasse2 ='$wMdp2App' WHERE id=$idApp");
 	$req->execute();
 }
