@@ -10,11 +10,12 @@ switch ($_GET['function']) {
         case 'recherche':
             recherche();
             break;
-		case 2:
-			echo "test";
-			break;
         case 'ports':
-            ports($_GET['id']);
+            $_SESSION['appareil'] = get_detailAppareil($_GET['id']);
+            ports($_SESSION["appareil"]['id']);
+            break;
+        case 'submit':
+            ports($_SESSION["appareil"]['id']);
 			break;
     }
     
@@ -47,6 +48,15 @@ function recherche() {
 
 function ports($id)
 {
+
     $commandesList = get_commands();
-    include_once('Views/ports.php');
+    
+    if(isset($_POST['selected'])) {
+
+        $return = "coucou";
+        include_once('Views/ports.php');
+    } else {
+        include_once('Views/ports.php');
+    }
 }
+    
