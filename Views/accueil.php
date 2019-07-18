@@ -27,7 +27,7 @@
                 </form>
                 <?php if(isset($rechercheEnCours) && $rechercheEnCours != "") { echo '<div class="rechercheEnCours">"' . $rechercheEnCours . '" <a href="index.php" onclick="exitSearch()" class="exitRecherche"><i class="fas fa-times-circle"></i></div>'; } ?>
             </div>
-            <a href="index.php?section=newconfig&function=formadd" class="ajoutApp">+ Ajouter un appareil</a>
+            <a href="index.php?section=newconfig&function=formadd" class="ajoutApp"><i class="fas fa-plus"></i> Ajouter un appareil</a>
             <table class="text-center">
                 <tbody>
                     <tr>
@@ -62,7 +62,7 @@
                             <td><label><?php echo $appareil['pingStatus']; ?></label></td>
                             <td>
                                 <a class="buttonConn" href="index.php?section=connection&function=formConn&libelle=<?= $appareil['libelle'] ?>&id=<?= $appareil['id'] ?>">Consulter les ports</a>
-                                <a class="buttonConn" href="index.php?section=detailAppareil&choixId=<?php echo $wIdApp ?>"><i class="fas fa-cat"></i></a>
+                                <a class="buttonConn" href="index.php?section=detailAppareil&choixId=<?php echo $wIdApp ?>"><i class="fas fa-edit"></i></a>
                                 <a class="buttonConn" href="/ping"><i class="fas fa-chart-line"></i></a>
                                 <a class="buttonConn" href="index.php?section=supprapp&function=supprapp&id=<?= $appareil['id'] ?>"><i class="fas fa-trash-alt"></i></a>
                             </td>

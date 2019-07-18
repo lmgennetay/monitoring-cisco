@@ -24,7 +24,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 				die;
 				break;
 			case 'connection':
-				include_once('Controllers/accueil.php');
+				include_once('Controllers/connection.php');
 				die;
 				break;
 			case 'detailAppareil':
