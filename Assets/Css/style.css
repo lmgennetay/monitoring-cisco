@@ -384,3 +384,7 @@ table tbody tr:nth-child(odd){
     height:650px;
     /* float:left; */
 }
+
+.black {
+    color: black;
+}

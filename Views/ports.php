@@ -19,7 +19,7 @@
         <form action="index.php?section=newconfig&function=submit" method="post" id="commande" name="commande" class="commande">
         <header class="menu"><?php include_once('Views/menu.php') ?></header>
         <div class="conteneur">
-            <h1 class="text-center blue">Ports - commandes</h1>
+            <h1 class="text-center blue">Ports - commandes - Appareil <span class="black"><?= $_SESSION["appareil"]['libelle'] ?></span></h1>
             <div class="separator"></div>
             <div class="portsCommandeFlex">
                 <div class="rechercheCommande">
