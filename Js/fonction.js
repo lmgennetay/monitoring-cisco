@@ -19,7 +19,7 @@ function searchCommand($text) {
 
 window.onbeforeunload = function (e) {
     // $('.fa-sync-alt').addClass('fa-pulse');
-    $('.conteneurReload').html('<a href="index.php"><span class="buttonReload"><i class="fas fa-sync-alt fa-pulse"></i></span> Chargement en cours...</a>');
+    $('.conteneurReload').html('<a href="index.php"><span class="buttonReload"><i class="fas fa-sync-alt fa-pulse"></i></span> En cours...</a>');
 }
 
 window.onload = function(e) {

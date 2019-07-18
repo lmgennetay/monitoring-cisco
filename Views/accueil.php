@@ -30,7 +30,15 @@
             </div>
             <a href="index.php?section=newconfig&function=formadd" class="ajoutApp"><i class="fas fa-plus"></i> Ajouter un appareil</a>
             <table class="text-center">
-                <tbody>
+                <colgroup>
+                    <col class="bgBlue"/>
+                    <col/>
+                    <col class="bgBlue"/>
+                    <col/>
+                    <col class="bgBlue"/>
+                    <col/>
+                </colgroup>
+                <thead>
                     <tr>
                         <th><input type="checkbox" id="selectionToutAppareil" name="selectionToutAppareil" onclick="selectAllApp(this)"></th>
                         <th></th>
@@ -39,34 +47,44 @@
                         <th class="col">État</th>
                         <th class="col">Action</th>
                     </tr>
+                </thead>
+                <tbody>
                     <?php
-                    foreach($listeAppareils as $appareil)
-                    { $wIdApp=$appareil['id'];
+                    if(!empty($listeAppareils)) {
+                        foreach($listeAppareils as $appareil)
+                        { $wIdApp=$appareil['id'];
+                        ?>
+                            <tr class="appareil">
+                                <td><input type="checkbox" class="selectionAppareil"></td>
+                                <?php
+                                    if($appareil['pingStatus'] == "Up"){
+                                        ?>
+                                        <td><span class="pastille-green"><i class="fas fa-circle"></i></span></td>
+                                        <?php
+                                    }elseif($appareil['pingStatus'] == "Down"){
+                                        ?>
+                                        <td><span class="pastille-red"><i class="fas fa-circle"></i></span></td>
+                                        <?php
+                                    }
+
+
+                                ?>
+                                <td><label><?php echo $appareil['libelle']; ?></label></td>
+                                <td><label><?php echo $appareil['ip']; ?></label></td>
+                                <td><label><?php echo $appareil['pingStatus']; ?></label></td>
+                                <td>
+                                    <a class="buttonConn" href="index.php?section=newconfig&function=ports&id=<?php echo $appareil['id'] ?>">Consulter les ports</a>
+                                    <a class="buttonConn" href="index.php?section=modifAppareil&choixId=<?php echo $wIdApp ?>"><i class="fas fa-edit"></i></a>
+                                    <a class="buttonConn" href="/ping"><i class="fas fa-chart-line"></i></a>
+                                    <a class="buttonConn" href="index.php?section=supprapp&function=supprapp&id=<?= $appareil['id'] ?>"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                        <?php
+                        }
+                    } else {
                     ?>
-                        <tr class="appareil">
-                            <td><input type="checkbox" class="selectionAppareil"></td>
-                            <?php
-                                if($appareil['pingStatus'] == "Up"){
-                                    ?>
-                                    <td><span class="pastille-green"><i class="fas fa-circle"></i></span></td>
-                                    <?php
-                                }elseif($appareil['pingStatus'] == "Down"){
-                                    ?>
-                                    <td><span class="pastille-red"><i class="fas fa-circle"></i></span></td>
-                                    <?php
-                                }
-
-
-                            ?>
-                            <td><label><?php echo $appareil['libelle']; ?></label></td>
-                            <td><label><?php echo $appareil['ip']; ?></label></td>
-                            <td><label><?php echo $appareil['pingStatus']; ?></label></td>
-                            <td>
-                                <a class="buttonConn" href="index.php?section=newconfig&function=ports&id=<?php echo $appareil['id'] ?>">Consulter les ports</a>
-                                <a class="buttonConn" href="index.php?section=modifAppareil&choixId=<?php echo $wIdApp ?>"><i class="fas fa-edit"></i></a>
-                                <a class="buttonConn" href="/ping"><i class="fas fa-chart-line"></i></a>
-                                <a class="buttonConn" href="index.php?section=supprapp&function=supprapp&id=<?= $appareil['id'] ?>"><i class="fas fa-trash-alt"></i></a>
-                            </td>
+                        <tr>
+                            <td colspan="6">Aucun appareil existant.</td>
                         </tr>
                     <?php
                     }
