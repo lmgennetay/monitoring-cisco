@@ -62,9 +62,6 @@ function ports($id)
         include_once('Views/ports.php');
     }
 }
-<<<<<<< HEAD
-    
-=======
 
 function modifierAppareil() {
     if(isset($_POST)) {
@@ -74,4 +71,3 @@ function modifierAppareil() {
         include_once('Views/modifAppareil.php');
     }
 }
->>>>>>> d717cfa2d4009f5728429309149c35a2b6164c3d
