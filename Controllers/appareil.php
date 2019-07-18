@@ -56,7 +56,29 @@ function ports($id)
     
     if(isset($_POST['selected'])) {
 
-        $return = "coucou";
+        $content = file_get_contents("./Scripts/template.php");
+        $content = str_replace("%username%", $_SESSION['appareil']['identifiant'], $content);
+        $content = str_replace("%password%", $_SESSION['appareil']['motdepasse'], $content);
+        $content = str_replace("%enable_password%", $_SESSION['appareil']['motdepasse2'], $content);
+        $content = str_replace("%ip%", $_SESSION['appareil']['ip'], $content);
+        $content = str_replace("%commandeici%", 'send "'.$_POST['commandeLine'].'"', $content);
+        file_put_contents("./Scripts/template.txt", $content);
+        
+        
+        echo"<pre>";
+        echo $content;
+        echo"</pre>";
+        die;
+
+   //Edition du txt
+
+        $current = file_get_contents("./Scripts/template.txt");
+        file_put_contents("./Scripts/template2.php", $current);
+        //traitement par le serveur
+
+        unlink("./Scripts/template2.php");
+        unlink("./Scripts/template.txt");
+
         include_once('Views/ports.php');
     } else {
         include_once('Views/ports.php');
