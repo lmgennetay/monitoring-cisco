@@ -3,27 +3,26 @@ set password test
 set enable_pwd test
 set switch 125.24.00.00
 
-set timeout 60
+set timeout 10
 spawn ssh -oStrictHostKeyChecking=no $username@$switch
 sleep 2
 expect "*ssword: "
 send "$password\n"
-sleep 0.5
+expect ">"
 send "enable\n"
-sleep 0.5
+expect "*ssword: "
 send "$enable_pwd\n"
-sleep 0.5
+expect "#"
 send "terminal length 0\n"
+expect "#"
 
 send "interface range , … \n"
-sleep 0.5
-send "switchport mode access \n"
-sleep 0.5
-send "switchport access vlan N° (unique) de vlan\n"
-sleep 0.5
+expect "#"
+send "duplex auto \n"
+expect "#"
 
 
 send "end\n"
-sleep 0.5
+expect "#"
 send "exit\n" 
 interact

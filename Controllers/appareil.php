@@ -82,9 +82,8 @@ function commande($id) {
         unlink("./Scripts/template.txt");
 
         $output = shell_exec('expect ./Scripts/result.php');
-        $output = "Résultat de la commande";
 
-        // unlink("./Scripts/result.php");
+        unlink("./Scripts/result.php");
 
         include_once('Views/commande.php');
     } else {
