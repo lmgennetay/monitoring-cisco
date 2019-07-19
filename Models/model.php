@@ -25,8 +25,8 @@ function set_appareil($request)
 
 function ping($ip)
 {
-	exec("ping -n 1 ".$ip, $output, $status);
-	//exec("ping -c 1 ".$ip, $output, $status);
+	//exec("ping -n 1 ".$ip, $output, $status);
+	exec("ping -c 1 ".$ip, $output, $status);
 	if($status == 0)
 	{
 		return "Up";
