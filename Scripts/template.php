@@ -8,11 +8,11 @@ spawn ssh -oStrictHostKeyChecking=no $username@$switch
 sleep 2
 expect "*ssword: "
 send "$password\n"
-sleep 0.5
+expect ">"
 send "enable\n"
-sleep 0.5
+expect "*ssword: "
 send "$enable_pwd\n"
-sleep 0.5
+expect "#"
 send "terminal length 0\n"
 
 %commandeici%
