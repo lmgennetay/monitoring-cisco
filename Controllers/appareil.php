@@ -109,8 +109,8 @@ function pingApp() {
 }
 
 function consultPorts() {
-    // $output = shell_exec('show interfaces status');
-    $output = file_get_contents("./Scripts/exemple.php");
+    $output = shell_exec('show interfaces status');
+    // $output = file_get_contents("./Scripts/exemple.php");
     $output = preg_split("/[\s]+/", $output);
     // print_r($output);
     $ligne = 0;
