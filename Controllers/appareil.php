@@ -86,9 +86,8 @@ function commande($id) {
         unlink("./Scripts/template.txt");
 
         $output = shell_exec('expect ./Scripts/result.php');
-        $output = "Résultat de la commande";
 
-        // unlink("./Scripts/result.php");
+        unlink("./Scripts/result.php");
 
         include_once('Views/commande.php');
     } else {
@@ -110,8 +109,8 @@ function pingApp() {
 }
 
 function consultPorts() {
-    // $output = shell_exec('show interfaces status');
-    $output = file_get_contents("./Scripts/exemple.php");
+    $output = shell_exec('show interfaces status');
+    // $output = file_get_contents("./Scripts/exemple.php");
     $output = preg_split("/[\s]+/", $output);
     // print_r($output);
     $ligne = 0;
