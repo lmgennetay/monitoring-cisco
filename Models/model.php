@@ -25,14 +25,22 @@ function set_appareil($request)
 
 function ping($ip)
 {
-	exec("ping -n 1 ".$ip, $output, $status);
-	//exec("ping -c 1 ".$ip, $output, $status);
+	//exec("ping -n 1 ".$ip, $output, $status);
+	exec("ping -c 1 ".$ip, $output, $status);
 	if($status == 0)
 	{
 		return "Up";
 	}else{
 		return "Down";
 	}
+	
+}
+
+function pingInfo($ip)
+{
+
+	exec("ping -c 1 ".$ip, $output, $status);
+	print_r($output[1]);
 	
 }
 
@@ -62,3 +70,49 @@ function get_conn_user($request) {
 	}
     return $resultat;
 }
+
+function searchApp($request) {
+	global $bdd;
+	$param = $_POST['searchApp'];
+    $req = $bdd->prepare("SELECT * from appareils WHERE libelle LIKE '%$param%' OR ip LIKE '%$param%' ORDER BY libelle ASC");
+	$req->execute();
+    $appareils = $req->fetchAll(PDO::FETCH_ASSOC);
+
+    return $appareils;
+}
+
+function get_commands()
+{
+    global $bdd;
+
+    $req = $bdd->prepare("SELECT * from commande order by label desc");
+	$req->execute();
+    $commandes = $req->fetchAll(PDO::FETCH_ASSOC);
+
+    return $commandes;
+}
+
+function get_detailAppareil($idApp)
+{
+    global $bdd;  
+    $req = $bdd->prepare("SELECT * FROM appareils WHERE id=$idApp");
+	$req->execute();
+    $appareils = $req->fetch();
+        
+    return $appareils;
+}
+
+function update_Appareil()
+{
+	global $bdd;
+	$idApp = $_POST['id'];
+	$wLibelleApp = $_POST['libelle'];
+	$wIpApp = $_POST['ip'];
+	$wIdentifiantApp = $_POST['identifiant'];
+	$wMdpApp = $_POST['motdepasse'];
+	$wMdp2App = $_POST['motdepasse2'];
+    $req = $bdd->prepare("UPDATE appareils SET libelle ='$wLibelleApp', ip ='$wIpApp', identifiant ='$wIdentifiantApp', motdepasse ='$wMdpApp', motdepasse2 ='$wMdp2App' WHERE id=$idApp");
+	$req->execute();
+}
+
+

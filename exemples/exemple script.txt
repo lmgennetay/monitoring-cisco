@@ -1,0 +1,22 @@
+#!/usr/bin/expect
+#show_version
+set username infra
+set password admin_01!
+set enable_pwd admin_01!
+set switch 192.168.2.20
+
+set timeout 60
+ spawn ssh -oStrictHostKeyChecking=no $username@$switch
+ sleep 2
+ expect "*ssword: "
+ send "$password\n"
+ sleep 0.5
+ send "enable\n"
+ sleep 0.5
+ send "$enable_pwd\n"
+ sleep 0.5
+ send "terminal length 0\n"
+ send "show version\n"
+ sleep 0.5
+ send "exit\n"
+ interact

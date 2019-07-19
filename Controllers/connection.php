@@ -37,10 +37,10 @@ function sendConnUser()
 		if ($result == 'true') {
 			include_once('Controllers/accueil.php');
 		} else {
-			include_once('Views/connUser.html');
+			include_once('Views/connUser.php');
 		}
 	} else {
-		include_once('Views/connUser.html');
+		include_once('Views/connUser.php');
 	}
 }
 

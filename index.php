@@ -6,7 +6,7 @@ include_once('Connection/connection.php');
 
 if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 	if (!isset($_SESSION['token']) && !isset($_SESSION['id']) && !isset($_SESSION['mdp'])) {
-		include_once('Controllers/connection.php');
+		include_once('Controllers/accueil.php');
 	} else {
 		if ($_SESSION['token'] == $_SESSION['id'] . $_SESSION['mdp']) {
 			include_once('Controllers/accueil.php');
@@ -15,20 +15,21 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 		}
 	}
 } else {
-	if (!isset($_SESSION['token']) && !isset($_SESSION['id']) . !isset($_SESSION['mdp'])) {
+	if (!isset($_SESSION['token']) && !isset($_SESSION['id']) && !isset($_SESSION['mdp'])) {
 		include_once('Controllers/connection.php');
 	} else {
 		switch ($_GET['section']) {
 			case 'newconfig':
 				include_once('Controllers/appareil.php');
-				die;
 				break;
 			case 'connection':
 				include_once('Controllers/connection.php');
-				die;
 				break;
-			case 2:
-				echo "test";
+			case 'modifAppareil':
+				include_once('Controllers/modifAppareil.php');
+				break;
+			case 'supprapp':
+			include_once('Controllers/appareil.php');
 				break;
 		}
 	}

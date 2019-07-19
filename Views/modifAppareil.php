@@ -1,3 +1,11 @@
+<?php
+	$wIdApp=$appareilChoisi['id'];
+	$wLibelleApp=$appareilChoisi['libelle'];
+	$wIpApp=$appareilChoisi['ip'];
+	$wIdentifiantApp=$appareilChoisi['identifiant'];
+	$wMdpApp=$appareilChoisi['motdepasse'];
+	$wMdp2App=$appareilChoisi['motdepasse2'];
+?>
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -18,51 +26,53 @@
     <body>
         <header class="menu"><?php include_once('Views/menu.php') ?></header>
         <div class="conteneur">
-            <h1 class="text-center blue">Ajout d'un appareil</h1>
+            <h1 class="text-center blue">Modification d'un appareil</h1>
             <div class="separator"></div>
             <div class="formAppDiv">
-                <form class="formApp"  method="post" action="index.php?section=newconfig&function=formadd">              
+                <form class="formApp"  method="post" action="index.php?section=newconfig&function=formmodif">              
                     <ul>
+						<li>
+							<input id="id" name="id" require class="element text medium inputConnApp" type="hidden" maxlength="255" value="<?php echo $wIdApp ?>"/> 
+						</li>
                         <li id="li_1" >
                             <label class="description" for="element_1">Libelle </label>
                             <div class="divInputAddMat">
-                                <input id="libelle" name="libelle" require class="element text medium inputConnApp" type="text" maxlength="255" value=""/> 
+                                <input id="libelle" name="libelle" require class="element text medium inputConnApp" type="text" maxlength="255" value="<?php echo $wLibelleApp ?>"/> 
                             </div> 
                         </li>	
 
                         <li id="li_2" >
-                            <label class="description" for="element_2">IP
-                            </label>
+                            <label class="description" for="element_2">IP </label>
                             <div class="divInputAddMat">
-                                <input id="ip" name="ip" require class="element text medium inputConnApp" type="text" maxlength="255" value=""/> 
+                                <input id="ip" name="ip" require class="element text medium inputConnApp" type="text" maxlength="255" value="<?php echo $wIpApp ?>"/> 
                             </div> 
                         </li>
 
                         <li id="li_3" >
                             <label class="description" for="element_3">Identifiant </label>
                             <div class="divInputAddMat">
-                                <input id="identifiant" require name="identifiant" class="element text medium inputConnApp" type="text" maxlength="255" value=""/> 
+                                <input id="identifiant" require name="identifiant" class="element text medium inputConnApp" type="text" maxlength="255" value="<?php echo $wIdentifiantApp ?>"/> 
                             </div> 
                         </li>
 
                         <li id="li_4" >
                             <label class="description" for="element_4">Mot de passe </label>
                             <div class="divInputAddMat">
-                                <input id="motdepasse" require name="motdepasse" class="element text medium inputConnApp" type="password" maxlength="255" value=""/> 
+                                <input id="motdepasse" require name="motdepasse" class="element text medium inputConnApp" type="password" maxlength="255" value="<?php echo $wMdpApp ?>"/> 
                             </div> 
                         </li>	
 
                         <li id="li_5" >
                             <label class="description" for="element_5">Mot de passe n°2 </label>
                             <div class="divInputAddMat">
-                                <input id="motdepasse2" require name="motdepasse2" class="element text medium inputConnApp" type="password" maxlength="255" value=""/> 
+                                <input id="motdepasse2" require name="motdepasse2" class="element text medium inputConnApp" type="password" maxlength="255" value="<?php echo $wMdp2App ?>"/> 
                             </div> 
                         </li>
 
                         <li class="buttons">
                         <input type="hidden" name="form_id" value="73894" />
 
-                        <input id="saveForm" type="submit" value="Ajouter" class="submitConnApp" />
+                        <input id="saveForm" type="submit" value="Modifier" class="submitConnApp" />
                         </li>
                     </ul>
                 </form>

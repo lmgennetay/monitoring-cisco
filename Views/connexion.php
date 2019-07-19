@@ -17,16 +17,16 @@
 
     <body>
         <div class="conteneur-conn">
-            <h1 class="text-center blue">Connexion à l'appareil *****</h1>
+            <h1 class="text-center blue">Connexion à l'appareil <?php echo $_GET['libelle'] ?></h1>
             <div class="separator"></div>
             <div class="connexionDiv">
-                <form method="post" class="formConn">
+                <form method="post" action="index.php?section=newconfig&function=ports&id=<?= $_GET['id'] ?>" class="formConn">
                     <label for="id">Identifiant</label>
                     <input type="text" name="id" placeholder="Identifiant CISCO" class="inputConnApp">
                     <label for="id">Mot de passe</label>
-                    <input type="text" name="mdp" placeholder="Mot de passe CISCO" class="inputConnApp">
+                    <input type="password" name="mdp" placeholder="Mot de passe CISCO" class="inputConnApp">
                     <label for="id">Mot de passe n°2</label>
-                    <input type="text" name="mdp2" placeholder="Mot de passe CISCO n°2" class="inputConnApp">
+                    <input type="password" name="mdp2" placeholder="Mot de passe CISCO n°2" class="inputConnApp">
                     <input type="submit" name="submit" value="Se connecter" class="submitConnApp">
                 </form>
             </div>

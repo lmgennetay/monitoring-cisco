@@ -46,6 +46,29 @@ footer {
     padding: 15px 0px;
 }
 
+textarea.editTextarea {
+    resize: vertical;
+    min-height: 200px;
+    height: 200px;
+    width: 100%;
+    padding: 5px;
+}
+
+textarea.infoTextarea {
+    resize: none;
+    min-height: 150px;
+    height: 150px;
+    width: 100%;
+    padding: 5px;
+}
+
+textarea.infoTextarea:disabled {
+    background-color: white;
+    color: black;
+    border: 1px solid #0077ff;
+    border-radius: 5px;
+}
+
 .menu {
     width: 12%;
     padding: 5px;
@@ -98,6 +121,7 @@ table {
     width: 70%;
     margin: 0 auto;
     border-spacing: 0px;
+    background-color: white;
 }
 
 tr {
@@ -105,7 +129,11 @@ tr {
 }
 
 td {
-    border-top: 1px solid black;
+    /* border-top: 1px solid black; */
+}
+
+table tbody tr:nth-child(odd){
+    background-color: #e6e6e6;
 }
 
 .blue {
@@ -120,6 +148,7 @@ td {
 
 .buttonConn {
     text-decoration: none;
+    background-color: white;
     color: black;
     padding: 0.2vw;
     border: 1px solid black;
@@ -132,6 +161,24 @@ td {
     background-color: black;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+.buttonSend {
+    text-decoration: none;
+    background-color: #0077ff;
+    color: white;
+    padding: 10px 5px;
+    border: 1px solid #0077ff;
+    border-radius: 10px;
+    width: auto;
+    margin: 5px 0px;
+    font-size: 1.2rem;
+}
+
+.buttonSend:hover {
+    cursor: pointer;
+    background-color: #4099ff;
+    border: 1px solid #4099ff;
 }
 
 .pastille-green {
@@ -215,12 +262,10 @@ td {
     height: auto;
     background-color: #cecece;
     border: 2px solid #0077ff;
-    position: fixed;
-    left: 35%;
-    top: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
 }
 
 .formConn {
@@ -279,5 +324,69 @@ td {
 }
 
 .element.text.medium {
-    width: 50%;
+    width: 100%;
 }
+
+.divInputAddMat {
+    width: 80%;
+}
+
+.rechercheEnCours {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    padding: 5px 5px 5px 7px;
+}
+
+.exitRecherche {
+    color: white;
+}
+
+.exitRecherche:hover {
+    color: gray;
+}
+
+.conteneurReload a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    width: 20px;
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+    background-color: #0077ff;
+    color: white;
+}
+
+.rechercheCommande {
+    display: flex;
+    flex-direction: column;
+    height:700px;
+    width:25%;
+}
+
+.paramCommande {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:700px;
+    width:70%;
+}
+
+.portsCommandeFlex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.searchCommandList {
+    overflow:auto;
+    height:650px;
+    /* float:left; */
+}
+
+.black {
+    color: black;
+}
+
+

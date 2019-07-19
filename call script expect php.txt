@@ -1,0 +1,7 @@
+<?php
+// Besoin d'aller modifier le fichier de script avant de l'exécuter en rajoutant la commande souhaitée
+
+$output = shell_exec('expect /home/pi/expect-www.sh'); // Le chemin du script va changer par la suite. Ne pas prendre en compte le nom et l'emplacement
+
+echo "<pre>$output</pre>";
+?>
