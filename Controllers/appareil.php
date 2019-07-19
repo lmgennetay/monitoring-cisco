@@ -21,7 +21,11 @@ switch ($_GET['function']) {
             ports($_SESSION["appareil"]['id']);
             break;
         case 'pingApp':
+            $_SESSION['appareil'] = get_detailAppareil($_GET['id']);
             pingApp();
+            break;
+        case 'pingInfo':
+            pingInfo($_GET['ip']);
             break;
     }
     
@@ -104,14 +108,5 @@ function modifierAppareil() {
 }
 
 function pingApp() {
-    if(isset($_GET['ip'])) {
-        $result = pingInfo($_GET['ip']);
-        // foreach($result as $r) {
-        //     $a = utf8_encode($r);
-        //     echo $a . '<br>';
-        // }
-        print_r($result);
-    } else {
-        include_once('Controllers/accueil.php');
-    }
+    include_once('Views/ping.php');
 }

@@ -38,16 +38,15 @@ function ping($ip)
 
 function pingInfo($ip)
 {
+
 	exec("ping -n 1 ".$ip, $output, $status);
-	//exec("ping -c 1 ".$ip, $output, $status);
-	$result = [];
-	array_push($result, $status);
-	foreach ($output as $o) {
-		// $o = utf8_encode($o);
-		// $o = utf8_decode($o);
-		array_push($result, $o);
-	}
-	return $result;
+	$toto = utf8_encode($output[2]);
+	//print_r($toto);
+	str_replace("", "e", $toto);
+	str_replace("ÿ", " ", $toto);
+	print_r($toto);
+
+
 	
 }
 
@@ -121,3 +120,5 @@ function update_Appareil()
     $req = $bdd->prepare("UPDATE appareils SET libelle ='$wLibelleApp', ip ='$wIpApp', identifiant ='$wIdentifiantApp', motdepasse ='$wMdpApp', motdepasse2 ='$wMdp2App' WHERE id=$idApp");
 	$req->execute();
 }
+
+
