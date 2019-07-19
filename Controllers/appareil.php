@@ -14,11 +14,14 @@ switch ($_GET['function']) {
 			modifierAppareil();
 			break;
         case 'ports':
+            commande($_SESSION["appareil"]['id']);
+            break;
+        case 'consultPorts':
             $_SESSION['appareil'] = get_detailAppareil($_GET['id']);
-            ports($_SESSION["appareil"]['id']);
+            consultPorts();
             break;
         case 'submit':
-            ports($_SESSION["appareil"]['id']);
+            commande($_SESSION["appareil"]['id']);
             break;
         case 'pingApp':
             $_SESSION['appareil'] = get_detailAppareil($_GET['id']);
@@ -56,13 +59,10 @@ function recherche() {
     }
 }
 
-function ports($id)
-{
-
+function commande($id) {
     $commandesList = get_commands();
     
     if(isset($_POST['selected'])) {
-
         $content = file_get_contents("./Scripts/template.php");
         $content = str_replace("%username%", $_SESSION['appareil']['identifiant'], $content);
         $content = str_replace("%password%", $_SESSION['appareil']['motdepasse'], $content);
@@ -72,29 +72,27 @@ function ports($id)
         $com = "";
         foreach($commandline as $c) {
             $com .= 'send "' . $c . '\n"' . PHP_EOL;
-            $com .= 'sleep 0.5' . PHP_EOL;
+            $com .= 'expect "#"' . PHP_EOL;
         }
         $content = str_replace("%commandeici%", $com, $content);
         file_put_contents("./Scripts/template.txt", $content);
-        
-        
-        echo"<pre>";
-        echo $content;
-        echo"</pre>";
-        die;
 
-   //Edition du txt
+        // echo"<pre>";
+        // echo $content;
+        // echo"</pre>";
 
         $current = file_get_contents("./Scripts/template.txt");
-        file_put_contents("./Scripts/template2.php", $current);
-        //traitement par le serveur
-
-        unlink("./Scripts/template2.php");
+        file_put_contents("./Scripts/result.php", $current);
         unlink("./Scripts/template.txt");
 
-        include_once('Views/ports.php');
+        $output = shell_exec('expect ./Scripts/result.php');
+        $output = "Résultat de la commande";
+
+        // unlink("./Scripts/result.php");
+
+        include_once('Views/commande.php');
     } else {
-        include_once('Views/ports.php');
+        include_once('Views/commande.php');
     }
 }
 
@@ -109,4 +107,24 @@ function modifierAppareil() {
 
 function pingApp() {
     include_once('Views/ping.php');
+}
+
+function consultPorts() {
+    // $output = shell_exec('show interfaces status');
+    $output = file_get_contents("./Scripts/exemple.php");
+    $output = preg_split("/[\s]+/", $output);
+    // print_r($output);
+    $ligne = 0;
+    $i = 0;
+    $tab = Array();
+    foreach($output as $o) {
+        $tab[$ligne][$i] = $o;
+        $i++;
+        if($i == 7) {
+            $ligne++;
+            $i = 0;
+        }
+    }
+    // print_r($tab);
+    include_once('Views/ports.php');
 }
