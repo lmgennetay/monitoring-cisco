@@ -19,7 +19,10 @@ switch ($_GET['function']) {
             break;
         case 'submit':
             ports($_SESSION["appareil"]['id']);
-			break;
+            break;
+        case 'pingApp':
+            pingApp();
+            break;
     }
     
 function nouveauAppareil() {
@@ -61,7 +64,13 @@ function ports($id)
         $content = str_replace("%password%", $_SESSION['appareil']['motdepasse'], $content);
         $content = str_replace("%enable_password%", $_SESSION['appareil']['motdepasse2'], $content);
         $content = str_replace("%ip%", $_SESSION['appareil']['ip'], $content);
-        $content = str_replace("%commandeici%", 'send "'.$_POST['commandeLine'].'"', $content);
+        $commandline = explode(PHP_EOL, $_POST['commandeLine']);
+        $com = "";
+        foreach($commandline as $c) {
+            $com .= 'send "' . $c . '\n"' . PHP_EOL;
+            $com .= 'sleep 0.5' . PHP_EOL;
+        }
+        $content = str_replace("%commandeici%", $com, $content);
         file_put_contents("./Scripts/template.txt", $content);
         
         
@@ -91,5 +100,18 @@ function modifierAppareil() {
         include_once('Controllers/accueil.php');
     } else {
         include_once('Views/modifAppareil.php');
+    }
+}
+
+function pingApp() {
+    if(isset($_GET['ip'])) {
+        $result = pingInfo($_GET['ip']);
+        // foreach($result as $r) {
+        //     $a = utf8_encode($r);
+        //     echo $a . '<br>';
+        // }
+        print_r($result);
+    } else {
+        include_once('Controllers/accueil.php');
     }
 }

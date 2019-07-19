@@ -30,14 +30,6 @@
             </div>
             <a href="index.php?section=newconfig&function=formadd" class="ajoutApp"><i class="fas fa-plus"></i> Ajouter un appareil</a>
             <table class="text-center">
-                <colgroup>
-                    <col class="bgBlue"/>
-                    <col/>
-                    <col class="bgBlue"/>
-                    <col/>
-                    <col class="bgBlue"/>
-                    <col/>
-                </colgroup>
                 <thead>
                     <tr>
                         <th><input type="checkbox" id="selectionToutAppareil" name="selectionToutAppareil" onclick="selectAllApp(this)"></th>
@@ -75,7 +67,7 @@
                                 <td>
                                     <a class="buttonConn" href="index.php?section=newconfig&function=ports&id=<?php echo $appareil['id'] ?>">Consulter les ports</a>
                                     <a class="buttonConn" href="index.php?section=modifAppareil&choixId=<?php echo $wIdApp ?>"><i class="fas fa-edit"></i></a>
-                                    <a class="buttonConn" href="/ping"><i class="fas fa-chart-line"></i></a>
+                                    <a class="buttonConn" href="index.php?section=newconfig&function=pingApp&ip=<?php echo $appareil['ip'] ?>"><i class="fas fa-chart-line"></i></a>
                                     <a class="buttonConn" href="index.php?section=supprapp&function=supprapp&id=<?= $appareil['id'] ?>"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>

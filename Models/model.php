@@ -36,6 +36,21 @@ function ping($ip)
 	
 }
 
+function pingInfo($ip)
+{
+	exec("ping -n 1 ".$ip, $output, $status);
+	//exec("ping -c 1 ".$ip, $output, $status);
+	$result = [];
+	array_push($result, $status);
+	foreach ($output as $o) {
+		// $o = utf8_encode($o);
+		// $o = utf8_decode($o);
+		array_push($result, $o);
+	}
+	return $result;
+	
+}
+
 function deleteAppareil($id)
 {
     global $bdd;

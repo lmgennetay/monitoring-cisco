@@ -1,28 +1,29 @@
-set username  qzdqzd
-set password qzdqzd
-set enable_pwd qzd
-set switch 9.9.9.9
+set username  test
+set password test
+set enable_pwd testg
+set switch 127.0.0.1
 
 set timeout 60
- spawn ssh -oStrictHostKeyChecking=no $username@$switch
- sleep 2
- expect "*ssword: "
- send "$password\n"
- sleep 0.5
- send "enable\n"
- sleep 0.5
- send "$enable_pwd\n"
- sleep 0.5
- send "terminal length 0\n"
+spawn ssh -oStrictHostKeyChecking=no $username@$switch
+sleep 2
+expect "*ssword: "
+send "$password\n"
+sleep 0.5
+send "enable\n"
+sleep 0.5
+send "$enable_pwd\n"
+sleep 0.5
+send "terminal length 0\n"
 
- send "show interface counter errors "
+send "interface range ,, … \n"
+sleep 0.5
+send "switchport mode trunk \n"
+sleep 0.5
+send "switchport trunk allowed vlan remove \n"
+sleep 0.5
 
-#pour chaque ligne de commande, mettre "send" devant la commande, mettre des "" autour de la ligne de commande et mettre un sleep de 0.5 après la commnade.
-#Si il y à plusieurs commandes, répeter le même processus pour faire suivre les commandes
 
-
-# La balise interact est obligatoire pour récupérer le résultat des commandes.
-# La ligne de commande "end" doit se trouver avec cette balise interact sinon le script se bloquera
- sleep 0.5
- send "exit\n" 
- interacttexte
+send "end\n"
+sleep 0.5
+send "exit\n" 
+interact
