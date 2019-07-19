@@ -1,7 +1,7 @@
 set username  test
 set password test
-set enable_pwd testg
-set switch 127.0.0.1
+set enable_pwd test
+set switch 125.24.00.00
 
 set timeout 60
 spawn ssh -oStrictHostKeyChecking=no $username@$switch
@@ -15,11 +15,11 @@ send "$enable_pwd\n"
 sleep 0.5
 send "terminal length 0\n"
 
-send "interface range ,, … \n"
+send "interface range , … \n"
 sleep 0.5
-send "switchport mode trunk \n"
+send "switchport mode access \n"
 sleep 0.5
-send "switchport trunk allowed vlan remove \n"
+send "switchport access vlan N° (unique) de vlan\n"
 sleep 0.5
 
 

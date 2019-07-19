@@ -10,87 +10,66 @@
         <title>Monitoring CISCO</title>
         <link rel="stylesheet" href="Assets/Css/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <script type="text/javascript" src="Js/fonction.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="Js/fonction.js"></script>
         <link rel="icon" href="Assets/Images/favicon.png">
     </head>
 
     <body>
-        <form action="index.php?section=newconfig&function=submit" method="post" id="commande" name="commande" class="commande">
         <header class="menu"><?php include_once('Views/menu.php') ?></header>
         <div class="conteneur">
-            <h1 class="text-center blue">Ports - commandes - Appareil <span class="black"><?= $_SESSION["appareil"]['libelle'] ?></span></h1>
+            <h1 class="text-center blue">Liste des ports - Appareil <span class="black"><?= $_SESSION["appareil"]['libelle'] ?></span></h1>
             <div class="separator"></div>
-            <div class="portsCommandeFlex">
-                <div class="rechercheCommande">
-                    <select onchange="textArea()" class="searchCommandList" name="selected" id="selectCommands" multiple>
-                        <?php
-                            print_r($commandesList);
-                            foreach($commandesList as $command)
-                            {
-                                ?>
-                                <option class="commandlist" data-comment="<?php echo $command['commentaire']; ?>" id="<?php echo $command['commande']; ?>" value="<?php echo $command['id']; ?>"><?php echo $command['label']; ?></option>
-                                <?php
-                            } 
+            <a href="index.php?section=newconfig&function=ports&id=<?php echo $_SESSION["appareil"]['id'] ?>" class="ajoutApp"><i class="fas fa-plus"></i> Lancer des commandes</a>
+            <table class="text-center tablePorts">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" id="selectionToutAppareil" name="selectionToutAppareil" onclick="selectAllApp(this)"></th>
+                        <th class="col">Ports</th>
+                        <th class="col">Name</th>
+                        <th class="col">Status</th>
+                        <th class="col">Vlan</th>
+                        <th class="col">Duplex</th>
+                        <th class="col">Speed</th>
+                        <th class="col">Type</th>
+                        <th class="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if(!empty($tab)) {
+                        $i = 0;
+                        foreach($tab as $ligne) {
+                            if($i != 0) {
                         ?>
-                    </select>
-                    <input type="text" id="search" name="search" placeholder="Rechercher une commande..."  onkeyup="searchCommand(this.value)">
-                </div>
-                <div class="paramCommande">
-                    <label for="commandeLine">Commande à exécuter</label>
-                    <textarea id="commandeLine" name="commandeLine" rows="5" cols="33" class="editTextarea"></textarea>
-                    <button type="submit" name="modifier" value="2" class="buttonSend">Soumettre la commande</button>
-                    <br>
-                    <label for="commentaire">Commentaire</label>
-                    <textarea disabled id="commentaire" name="story" rows="5" cols="33" class="infoTextarea"></textarea>
-                    <br>
-                    <label for="result">Resultat commande</label>
-                    <textarea disabled id="result" name="story" rows="5" cols="33" class="infoTextarea"><?php if(isset($result)){ echo result;} ?>
-                    </textarea>
-                </div>
-            </div>
+                            <tr class="appareil">
+                                <td><input type="checkbox" class="selectionAppareil"></td>
+                                <td><label><?php echo $ligne['0']; ?></label></td>
+                                <td><label><?php echo $ligne['1']; ?></label></td>
+                                <td><label><?php echo $ligne['2']; ?></label></td>
+                                <td><label><?php echo $ligne['3']; ?></label></td>
+                                <td><label><?php echo $ligne['4']; ?></label></td>
+                                <td><label><?php echo $ligne['5']; ?></label></td>
+                                <td><label><?php echo $ligne['6']; ?></label></td>
+                                <td>
+                                    <!-- <a class="buttonConn" href="index.php?section=newconfig&function=ports&id=<?php echo $appareil['id'] ?>">Commandes</a> -->
+                                </td>
+                            </tr>
+                        <?php
+                            }
+                            $i++;
+                        }
+                    } else {
+                    ?>
+                        <tr>
+                            <td colspan="9">Aucun ports trouvées.</td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
         </div>
         <footer><?php include_once('Views/footer.php') ?></footer>
-        </form>
     </body>
 </html>
-
-<script>
-function searchCommand($text) {
-    
-     $('.commandlist').each(function() {
-        var text = $text;
-        if(text != "")
-        {
-            if($(this).text().includes(text) == true)
-            {
-               $(this).show();
-            }else{
-                $(this).hide();
-            }
-        }else{
-            $(this).show();
-        }
-        
-    });
-     }
-
-     function textArea() {
-        var commentaire = $( "#selectCommands option:selected" ).attr('data-comment');
-        console.log(commentaire);
-        var value = $( "#selectCommands option:selected" ).attr('id');
-        $("#commandeLine").val(value);
-        $("#commentaire").val(commentaire);
-     }
-
-
-        $( "#commande" ).submit(function( event ) {
-            if($("#commandeLine").val().includes("<") == true || $("#commandeLine").val().includes(">") == true)
-            {
-                alert("La commande contient des erreurs");
-                return false;
-            }
-            return true;
-        });
-
-</script>
