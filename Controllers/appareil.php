@@ -64,6 +64,7 @@ function commande($id) {
     
     if(isset($_POST['selected'])) {
         $content = file_get_contents("./Scripts/template.php");
+        $content = iconv("CP1257","UTF-8", $content);
         $content = str_replace("%username%", $_SESSION['appareil']['identifiant'], $content);
         $content = str_replace("%password%", $_SESSION['appareil']['motdepasse'], $content);
         $content = str_replace("%enable_password%", $_SESSION['appareil']['motdepasse2'], $content);
@@ -71,25 +72,25 @@ function commande($id) {
         $commandline = explode(PHP_EOL, $_POST['commandeLine']);
         $com = "";
         foreach($commandline as $c) {
-            $com .= 'send "' . $c . '\n"' . PHP_EOL;
+            $com .= trim('send "' . $c . '\n"') . PHP_EOL;
             $com .= 'expect "#"' . PHP_EOL;
         }
         $content = str_replace("%commandeici%", $com, $content);
         file_put_contents("./Scripts/template.txt", $content);
 
-        // echo"<pre>";
-        // echo $content;
-        // echo"</pre>";
+        echo"<pre>";
+        echo $content;
+        echo"</pre>";
 
-        $current = file_get_contents("./Scripts/template.txt");
-        file_put_contents("./Scripts/result.php", $current);
-        unlink("./Scripts/template.txt");
+        // $current = file_get_contents("./Scripts/template.txt");
+        // file_put_contents("./Scripts/result.php", $current);
+        // unlink("./Scripts/template.txt");
 
-        $output = shell_exec('expect ./Scripts/result.php');
+        // $output = shell_exec('expect ./Scripts/result.php');
 
-        unlink("./Scripts/result.php");
+        // unlink("./Scripts/result.php");
 
-        include_once('Views/commande.php');
+        // include_once('Views/commande.php');
     } else {
         include_once('Views/commande.php');
     }

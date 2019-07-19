@@ -1,0 +1,30 @@
+set username  test
+set password test
+set enable_pwd testg
+set switch 127.0.0.1
+
+set timeout 10
+spawn ssh -oStrictHostKeyChecking=no $username@$switch
+sleep 2
+expect "*ssword: "
+send "$password\n"
+expect ">"
+send "enable\n"
+expect "*ssword: "
+send "$enable_pwd\n"
+expect "#"
+send "terminal length 0\n"
+expect "#"
+
+send "interface range Nom interface,Nom interface\n"
+expect "#"
+send "no description\n"
+expect "#"
+send "description Description écrite par l’utilisateur\n"
+expect "#"
+
+
+send "end\n"
+expect "#"
+send "exit\n" 
+interact
