@@ -40,7 +40,7 @@ function pingInfo($ip)
 {
 
 	exec("ping -c 1 ".$ip, $output, $status);
-	print_r($output[2]."coucou");
+	print_r($output[1]);
 	
 }
 
