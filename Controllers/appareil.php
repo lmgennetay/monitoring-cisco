@@ -82,15 +82,15 @@ function commande($id) {
         echo $content;
         echo"</pre>";
 
-        // $current = file_get_contents("./Scripts/template.txt");
-        // file_put_contents("./Scripts/result.php", $current);
-        // unlink("./Scripts/template.txt");
+        $current = file_get_contents("./Scripts/template.txt");
+        file_put_contents("./Scripts/result.php", $current);
+        unlink("./Scripts/template.txt");
 
-        // $output = shell_exec('expect ./Scripts/result.php');
+        $output = shell_exec('expect ./Scripts/result.php');
 
-        // unlink("./Scripts/result.php");
+        unlink("./Scripts/result.php");
 
-        // include_once('Views/commande.php');
+        include_once('Views/commande.php');
     } else {
         include_once('Views/commande.php');
     }
