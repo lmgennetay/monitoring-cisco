@@ -67,7 +67,7 @@
                                 <td>
                                     <a class="buttonConn" href="index.php?section=newconfig&function=consultPorts&id=<?php echo $appareil['id'] ?>">Consulter les ports</a>
                                     <a class="buttonConn" href="index.php?section=modifAppareil&choixId=<?php echo $wIdApp ?>"><i class="fas fa-edit"></i></a>
-                                    <a class="buttonConn" href="index.php?section=newconfig&function=pingApp&ip=<?php echo $appareil['ip'] ?>"><i class="fas fa-chart-line"></i></a>
+                                    <a class="buttonConn" href="index.php?section=newconfig&function=pingApp&id=<?php echo $appareil['id'] ?>&ip=<?php echo $appareil['ip'] ?>"><i class="fas fa-chart-line"></i></a>
                                     <a class="buttonConn" href="index.php?section=supprapp&function=supprapp&id=<?= $appareil['id'] ?>"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
