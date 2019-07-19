@@ -39,14 +39,8 @@ function ping($ip)
 function pingInfo($ip)
 {
 
-	exec("ping -n 1 ".$ip, $output, $status);
-	$toto = utf8_encode($output[2]);
-	//print_r($toto);
-	str_replace("", "e", $toto);
-	str_replace("ÿ", " ", $toto);
-	print_r($toto);
-
-
+	exec("ping -c 1 ".$ip, $output, $status);
+	print_r($output[2]);
 	
 }
 
