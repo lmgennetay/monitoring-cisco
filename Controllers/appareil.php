@@ -109,8 +109,13 @@ function pingApp() {
 }
 
 function consultPorts() {
-    $output = shell_exec('show interfaces status');
-    // $output = file_get_contents("./Scripts/exemple.php");
+    // $content = file_get_contents("./Scripts/template.php");
+    // $content = str_replace("%username%", $_SESSION['appareil']['identifiant'], $content);
+    // $content = str_replace("%password%", $_SESSION['appareil']['motdepasse'], $content);
+    // $content = str_replace("%enable_password%", $_SESSION['appareil']['motdepasse2'], $content);
+    // $content = str_replace("%ip%", $_SESSION['appareil']['ip'], $content);
+    // $content = shell_exec('');
+    $output = file_get_contents("./Scripts/exemple.php");
     $output = preg_split("/[\s]+/", $output);
     // print_r($output);
     $ligne = 0;
